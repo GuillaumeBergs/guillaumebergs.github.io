@@ -682,7 +682,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_imgtmp					=	document.getElementsByClassName("main-img")[document.getElementsByClassName("main-img").length-1].innerHTML;
+				fromus_imgtmp					=	document.getElementsByClassName("main-img")[document.getElementsByClassName("main-img").length].innerHTML;
 				fromus_imgtmp					+=	'';				
 				fromus_img						= 	(/\"(http\:\/\/.*)(\.jpg|\.jpeg|\.tif|\.bmp|\.png|\.gif)\" /gi.exec(fromus_imgtmp)[0] + '').replace(/alt.*/,'').replace("\"","").replace("\"","");
 
