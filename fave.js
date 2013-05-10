@@ -378,7 +378,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				=	document.getElementById("priceText").innerText;
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
 						
-						if(document.getElementsByClassName("description")!=undefined)
+						if(document.getElementsByClassName("description")[0]!=undefined)
 							{
 								fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
 							}
