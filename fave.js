@@ -452,7 +452,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				fromus_objectname			=	document.getElementsByClassName("ProductNameColorLARGE")[0].innerText;
 		alert(fromus_objectname);
-				fromus_pricemintmp				=	document.getElementById("ProductPrice")[0].innerText;
+				fromus_pricemintmp				=	document.getElementById("ProductPrice").innerText;
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemintmp)[0];		
 		alert(fromus_pricemin);	
 				fromus_img							=	document.getElementById("product_photo").src;
