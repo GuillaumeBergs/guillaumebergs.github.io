@@ -705,9 +705,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_imgtmp					= 	fromus_imgtmp+'';
 				fromus_img						= 	/(http.*)(\.jpg|\.jpeg|\.png|\.bmp|\.tif|\.gif)/gi.exec(fromus_imgtmp)[0].replace("?","");	
 
-				if(document.getElementByid('pi-sub-title')!=undefined)
+				if(document.getElementById('pi-sub-title')!=undefined)
 					{
-						fromus_desc						=	document.getElementByid('pi-sub-title').innerText;	
+						fromus_desc						=	document.getElementById('pi-sub-title').innerText;	
 					}
 			}break;
 			
