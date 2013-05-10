@@ -1547,7 +1547,7 @@ if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du
 			fromus_desc									=	fromus_objectname;
 		}
 else
-		{
+		{alert("too long!";
 			fromus_desc									=	fromus_desc.substring(0,200);
 		}
 	
