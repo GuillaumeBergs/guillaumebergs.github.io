@@ -1,4 +1,3 @@
-
 var fromus_offre = document.location.href;
 var fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_offre)[1];
 var fromus_objectname,
@@ -9,7 +8,7 @@ var fromus_objectname,
 	fromus_img,
 	fromus_desc,
 	fromus_desctmp;
-var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/;
+var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/; //test de commentaire
 
 var selectedText='';
 	
