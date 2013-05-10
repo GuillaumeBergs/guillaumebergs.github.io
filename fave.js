@@ -494,7 +494,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 					
 				fromus_img						=	document.getElementById("mapImageSjElement4_img").src;
-				
+				alert("ok");
 				if(document.getElementsByClass("pdp_brand_desc_info")[0]!=undefined)
 					{
 						fromus_desc						=	document.getElementsByClass("pdp_brand_desc_info")[0].innerText;
