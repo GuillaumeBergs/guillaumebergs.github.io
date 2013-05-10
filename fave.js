@@ -604,7 +604,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/gi.exec(fromus_pricemin)[0];				
 							
 				fromus_img						=	document.getElementById("backImageSjElement4_img").src;
-				fromus_img						=	fromus_img.replace(/(\?.*)/,'');				
+				fromus_img						=	fromus_img.replace(/(\?.*)/,'');			
+				
+			if(document.getElementById("ppLongDesc")!=undefined)
+					{
+						fromus_desc				=	document.getElementById("ppLongDesc").innerText;
+					}
+			
 			}break;
 				
 		case "www1.macys.com":
