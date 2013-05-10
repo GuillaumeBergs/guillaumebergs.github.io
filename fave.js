@@ -451,10 +451,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.swimoutlet.com":
 			{
 				fromus_objectname			=	document.getElementsByClassName("ProductNameColorLARGE")[0].innerText;
-		
+		alert(fromus_objectname);
 				fromus_pricemintmp				=	document.getElementById("ProductPrice")[0].innerText;
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemintmp)[0];		
-				
+		alert(fromus_pricemin);	
 				fromus_img							=	document.getElementById("product_photo").src;
 				
 				fromus_desc							= document.getElementsByClassName("so-product-description")[0].innerText;	
@@ -1577,4 +1577,4 @@ localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
