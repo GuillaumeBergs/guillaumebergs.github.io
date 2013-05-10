@@ -656,9 +656,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 				fromus_img						=	document.getElementById("main-image-link").href;		
 
-				if(document.getElementsByClassName("specs text")[0]!=undefined)
+				if(document.getElementsByClassName("description-left")[0]!=undefined)
 					{
-						fromus_desc				=	document.getElementsByClassName("specs text")[0].innertext;
+						fromus_desc				=	document.getElementsByClassName("description-left")[0].innertext;
 					}
 			}break;
 
