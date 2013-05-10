@@ -421,8 +421,17 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 			fromus_img						=	document.getElementById("p-picture").src;
 			
-			fromus_pricemintmp				=	document.getElementById("b-price-s").innerText;
+			if(document.getElementsByClassName("reg-price-dollars")[0]!=undefined)
+				{	//En cas de promo
+					fromus_pricemintmp				=	document.getElementById("reg-price-dollars").innerText;
+				}
+			else
+				{	//Sinon
+					fromus_pricemintmp				=	document.getElementById("b-price-s").innerText;
+				}	
 			fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
+			
+			fromus_desc							=	document.getElementById("p-desc").innerText;
 			}break;
 		
 		case "www.hautelook.com":
@@ -1566,4 +1575,4 @@ localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
