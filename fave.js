@@ -379,7 +379,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
 						
 						if(document.getElementsByClassName("description")[0]!=undefined)
-							{
+							{	// Si la description existe, la prendre
 								fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
 							}
 					}
@@ -395,6 +395,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementsByClassName("descript-price");
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
+				
+				fromus_desc							=	document.getElementsByClassName("short-description")[0].innerText;
 				
 				if(document.getElementById("wrap")!=undefined)
 					{	//Le noeud change entre l'aperçu et la page dédiée
