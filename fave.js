@@ -344,7 +344,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp			=	fromus_objectnametmp[0].innerText;
 						fromus_objectname				=	/(.*)(\n\$)/.exec(fromus_objectnametmp)[1];
 						
-						fromus_desc							=	document.getElementById("productDesc");
+						fromus_desc							=	document.getElementById("productDesc").innerText;
 					}
 				else
 					{	//Preview
