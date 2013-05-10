@@ -568,15 +568,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				fromus_objectnametmp			=	document.getElementsByClassName("pp-product-name");
 				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
-		alert(fromus_objectname);
+
 				fromus_pricemintmp				=	document.getElementsByClassName("pp-summary-price");
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
-		alert(	fromus_pricemin);
+
 				fromus_img						=	document.getElementById("backImageSjElement5_img").src;
 				fromus_img						=	fromus_img.replace(/(\?.*)/,'');
-		alert(	fromus_img);	
-				if(document.getElementsById("pp-product-description")[0]!=undefined)
+
+				if(document.getElementsByClassName("pp-product-description")[0]!=undefined)
 					{
 						fromus_desc				=	document.getElementsByClassName("pp-product-description")[0].innerText;
 					}
