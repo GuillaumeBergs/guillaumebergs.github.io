@@ -1564,7 +1564,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_img						= 	"non trouve";
 			}
 	}
-if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du produit.
+if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du produit.
 		{
 			fromus_desc									=	fromus_objectname;
 		}
