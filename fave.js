@@ -100,7 +100,9 @@ var fromus_objectname,
 	fromus_pricemin,			// Le "fromus_" permet d'empêcher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
 	fromus_pricemintmp,	
 	fromus_imgtmp,
-	fromus_img;
+	fromus_img,
+	fromus_desc,
+	fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/;
 
 /////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
@@ -330,6 +332,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 				fromus_pricemintmp				=	document.getElementById("sales_price").innerText;
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
+				
+				fromus_desc						=	document.getElementById("desc_and_bottom_line").innerText;
 			}break;
 		
 		case "www.dsw.com":
@@ -1538,9 +1542,14 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_img						= 	"non trouve";
 			}
 	}
+if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du produit.
+		{
+			fromus_desc									=	fromus_objectname;
+		}	
+	
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
