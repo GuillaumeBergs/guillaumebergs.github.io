@@ -423,7 +423,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 			if(document.getElementsByClassName("reg-price-dollars")[0]!=undefined)
 				{	//En cas de promo
-					fromus_pricemintmp				=	document.getElementsByClassName("reg-price-dollars")[0].innerText;
+					fromus_pricemintmp				=	document.getElementsByClassName("reg-price-dollars")[1].innerText;
 				}
 			else
 				{	//Sinon
@@ -443,7 +443,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
 
-				fromus_img						=	document.getElementById("imgModMediumImg").src;
+				fromus_img							=	document.getElementById("imgModMediumImg").src;
+				
+				fromus_desc							=	document.getElementById("moduleProductInfo").innerText;
 		}break;
 		
 		case "www.swimoutlet.com":
