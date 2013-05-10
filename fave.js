@@ -774,6 +774,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				fromus_pricemintmp				=	document.getElementById("parProductDetailPrice").innerText;
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0].replace(/\s/g,'');				
+			
+				if(document.getElementById('divProductDetailDescriptionAreaDisplay1')!=undefined)
+					{
+						fromus_desc						=	document.getElementById('divProductDetailDescriptionAreaDisplay1').innerText;	
+					}					
 			}break;
 
 		case "www.rei.com":
