@@ -616,7 +616,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www1.macys.com":
 			{
 				if(document.getElementById("productTitle")!=undefined)	//Page du produit
-					{alert("preview");
+					{
 						fromus_objectname				=	document.getElementById("productTitle").innerText;
 
 						fromus_img						=	document.getElementById("mainView_1").src;
@@ -631,13 +631,14 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				else	//Preview
 					{				
 						fromus_objectname				=	document.getElementById("quickViewProductName").innerText.replace(/Web ID(.*)/,'');
-				
+			alert(fromus_objectname);
 						fromus_img						=	document.getElementById("mapImageSjElement4_img").src;	
-
+			alert(fromus_img);
 						//La ligne suivante récupère le dernier prix de l'élément, qui est le prix avec discount le cas échéant
 
 						fromus_pricemintmp				=	document.getElementById("quickViewPrices").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
+			alert(	fromus_pricemin);
 					}
 					
 				if(document.getElementById("longDescription")!=undefined)
