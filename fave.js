@@ -738,7 +738,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 					fromus_pricemintmp				=	document.getElementsByClassName("Ovalue main-price-red")[0];
 					fromus_pricemin					=	fromus_pricemintmp.innerText + '';	
-					fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];					
+					fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];		
+
+				if(document.getElementById('details_descFull')!=undefined)
+					{
+						fromus_desc						=	document.getElementById('details_descFull').innerText;	
+					}					
 			}break;
 				
 		case "www.ralphlauren.com":
