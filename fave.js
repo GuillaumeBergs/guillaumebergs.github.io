@@ -554,7 +554,6 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{	
 						fromus_pricemintmp				=	document.getElementsByClassName("original");
 						fromus_pricemintmp					=	fromus_pricemintmp[0].innerHTML;
-						alert(fromus_pricemin);
 					}	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];	
 
@@ -631,14 +630,14 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				else	//Preview
 					{				
 						fromus_objectname				=	document.getElementById("quickViewProductName").innerText.replace(/Web ID(.*)/,'');
-			alert(fromus_objectname);
+
 						fromus_img						=	document.getElementById("mapImageSjElement4_img").src;	
-			alert(fromus_img);
+
 						//La ligne suivante récupère le dernier prix de l'élément, qui est le prix avec discount le cas échéant
 
 						fromus_pricemintmp				=	document.getElementById("quickViewPrices").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
-			alert(	fromus_pricemin);
+
 					}
 					
 				if(document.getElementById("longDescription")!=undefined)
@@ -655,7 +654,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementById("product-price").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
 		
-				fromus_img						=	document.getElementById("main-image-link").href;				
+				fromus_img						=	document.getElementById("main-image-link").href;		
+
+				if(document.getElementsByClassName("specs text")[0]!=undefined)
+					{
+						fromus_desc				=	document.getElementsByClassName("specs text")[0].innertext;
+					}
 			}break;
 
 		case "www.neimanmarcus.com":
@@ -824,7 +828,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementById("addToCartForm")==undefined)	// S'il s'agit d'une preview
 					{			
-						alert("La recuperation sur preview ne fonctionne pas ici.");	// Dernière vérification : 25 avril 2013
+						fromus_objectname				=	"Nom";	//La recuperation sur preview ne fonctionne pas ici. Dernière vérification : 25 avril 2013
 					}
 				else	// S'il s'agit d'une fiche
 					{
