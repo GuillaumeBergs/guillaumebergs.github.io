@@ -505,9 +505,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				fromus_objectname			=	document.getElementsByClassName("product-name").innerText;		
 			
-				fromus_pricemintmp				=	document.getElementsByClassName("standardprice");
-				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
+				fromus_pricemintmp				=	document.getElementsByClassName("product-price")[0].innerText;
+				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemintmp)[0];
 			
 				fromus_img							=	document.getElementById("prodImage").src;				
 				fromus_img							=	fromus_img.replace(/(\$.*\$)/,"");
