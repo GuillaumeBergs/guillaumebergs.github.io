@@ -322,8 +322,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 				fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;		
 			}break;
-		
-		
+				
 		case "www.dogfunk.com":
 			{
 				fromus_objectname				=	document.getElementById("buy_box_title").innerText;
@@ -494,7 +493,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemin=fromus_pricemintmp[0];
 					}
 					
-				fromus_img						=	document.getElementById("mapImageSjElement4_img").src;					
+				fromus_img						=	document.getElementById("mapImageSjElement4_img").src;
+				
+				if(document.getElementsByClass("pdp_brand_desc_info")[0]!=undefined)
+					{
+						fromus_desc						=	document.getElementsByClass("pdp_brand_desc_info")[0].innerText;
+					}
 			}break;
 			
 		case "www.juicycouture.com":
