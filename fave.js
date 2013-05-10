@@ -1547,7 +1547,7 @@ if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du
 			fromus_desc									=	fromus_objectname;
 		}
 else
-		{alert("too long!";
+		{alert("too long!");
 			fromus_desc									=	fromus_desc.substring(0,200);
 		}
 	
@@ -1556,4 +1556,4 @@ localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
