@@ -450,18 +450,14 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 		case "www.swimoutlet.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("ProductNameColorLARGE");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
+				fromus_objectname			=	document.getElementsByClassName("ProductNameColorLARGE")[0].innerText;
 		
-				fromus_pricemintmp				=	document.getElementById("ProductPrice");
-				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];		
+				fromus_pricemintmp				=	document.getElementById("ProductPrice")[0].innerText;
+				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemintmp)[0];		
 				
 				fromus_img							=	document.getElementById("product_photo").src;
 				
 				fromus_desc							= document.getElementsByClassName("so-product-description")[0].innerText;	
-
-				
 		}break;
 		
 		case "www.jcrew.com":
