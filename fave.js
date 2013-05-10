@@ -361,7 +361,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.gap.com":
 			{
 				if(document.getElementById("quickLookPriceText")!=undefined)	// Les noeuds changent entre l'aperçu et la page dédiée
-					{
+					{	// Preview
 						fromus_objectname				=	document.getElementById("quickLookProductName").innerText;
 			
 						fromus_img						=	document.getElementById("quicklook_product_image").src;
@@ -370,13 +370,18 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
 					}
 				else
-					{			
+					{	// Page	
 						fromus_objectname				=	document.getElementById("productNameText").innerText;
 						
 						fromus_img						=	document.getElementById("product_image").src;	
 						
 						fromus_pricemintmp				=	document.getElementById("priceText").innerText;
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
+						
+						if(document.getElementsByClassName("description")!=undefined)
+							{
+								fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
+							}
 					}
 			}break;
 				
