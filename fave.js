@@ -665,12 +665,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.neimanmarcus.com":
 			{
 				if(document.getElementById("productName")!=undefined) // S'il s'agit d'une preview
-					{ alert("previaw");
+					{
 						fromus_objectnametmp			=	document.getElementById("productName").innerText;
 						fromus_objectname				=	fromus_objectnametmp.replace(/\n(.*)/g,"");	
 					}
 				else	// S'il s'agit de la page d'un produit
-					{alert("page");
+					{
 						fromus_objectnametmp			=	document.getElementsByClassName("lineItemInfo")[0].innerText.replace(/\s/g,'');
 						fromus_objectname				=	/(.*\$)/.exec(fromus_objectnametmp)[0];	
 				
@@ -678,14 +678,18 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						
 						fromus_objectname				=	fromus_objectname.substring(0,fromus_objectname.length-1).replace(/([a-z])([A-Z])/g, '$1 $2');
 					}
-					alert(fromus_objectname);
+
 				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 				fromus_pricemin					=	/(\$[0-9,]{0,}[\.0-9]{0,32})/gi.exec(fromus_pricemintmp)[0];
-alert(fromus_pricemin);
+
 				fromus_imgtmp					=	document.getElementsByClassName("main-img")[0].innerHTML;
 				fromus_imgtmp					+=	'';				
 				fromus_img						= 	(/\"(http\:\/\/.*)(\.jpg|\.jpeg|\.tif|\.bmp|\.png|\.gif)\" /gi.exec(fromus_imgtmp)[0] + '').replace(/alt.*/,'').replace("\"","").replace("\"","");
-alert(fromus_img);			
+
+				if(document.getElementById("productDetails")!=undefined)
+					{
+						fromus_desc				=	document.getElementById("productDetails").innerText;
+					}
 			}break;
 
 		case "www.nike.com":
