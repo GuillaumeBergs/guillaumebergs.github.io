@@ -642,7 +642,7 @@ alert(	fromus_pricemin);
 					
 				if(document.getElementById("longDescription")!=undefined)
 					{
-						fromus_desc							=	document.getElementById("longDescription");
+						fromus_desc							=	document.getElementById("longDescription").innerText;
 					}
 			}break;
 			
