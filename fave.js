@@ -575,6 +575,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				fromus_img						=	document.getElementById("backImageSjElement5_img").src;
 				fromus_img						=	fromus_img.replace(/(\?.*)/,'');
+				
+				if(document.getElementsById("pp-product-description")[0]!=undefined)
+					{
+						fromus_desc				=	document.getElementsByClassName("pp-product-description")[0].innerText;
+					}
 			}break;
 		
 		case "www.llbean.com":
