@@ -618,15 +618,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(document.getElementById("productTitle")!=undefined)	//Page du produit
 					{alert("preview");
 						fromus_objectname				=	document.getElementById("productTitle").innerText;
-alert(fromus_objectname);
+
 						fromus_img						=	document.getElementById("mainView_1").src;
 						fromus_img						= 	/(http)(.*)(\?)/gi.exec(fromus_img)[0].replace("?","");	
-alert(fromus_img);
+
 						//La ligne suivante récupère le dernier prix de l'élément, qui est le prix avec discount le cas échéant
 
 						fromus_pricemintmp				=	document.getElementsByClassName("productPrice")[0].innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];	
-alert(	fromus_pricemin);			
+
 					}
 				else	//Preview
 					{				
