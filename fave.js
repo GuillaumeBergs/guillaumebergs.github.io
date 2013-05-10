@@ -423,7 +423,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 			if(document.getElementsByClassName("reg-price-dollars")[0]!=undefined)
 				{	//En cas de promo
-					fromus_pricemintmp				=	document.getElementById("reg-price-dollars").innerText;
+					fromus_pricemintmp				=	document.getElementsByClassName("reg-price-dollars")[0].innerText;
 				}
 			else
 				{	//Sinon
