@@ -639,7 +639,11 @@ alert(	fromus_pricemin);
 						fromus_pricemintmp				=	document.getElementById("quickViewPrices").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
 					}
-		
+					
+				if(document.getElementById("longDescription")!=undefined)
+					{
+						fromus_desc							=	document.getElementById("longDescription");
+					}
 			}break;
 			
 		case "www.moosejaw.com":
