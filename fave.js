@@ -1550,7 +1550,7 @@ if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du
 	//Début de la section "limitation de la longueur des données".
 			fromus_desc									=	fromus_desc.substring(0,200);
 			fromus_objectname						=	fromus_objectname.substring(0,100);
-			fromus_pricemin							=	/[0-9\.]{1,}/g.exec(fromus_pricemin)[0];
+			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
 	
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
