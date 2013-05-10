@@ -758,6 +758,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_imgtmp					=	document.getElementsByClassName("s7flyoutFlyoutView")[0].innerHTML;
 				fromus_imgtmp					= 	fromus_imgtmp+'';
 				fromus_img						= 	/(http.*\?)/gi.exec(fromus_imgtmp)[0].replace("?","");	
+			
+				if(document.getElementById('longDescDiv')!=undefined)
+					{
+						fromus_desc						=	document.getElementById('longDescDiv').innerText;	
+					}					
 			}break;
 
 		case "www.qvc.com":
