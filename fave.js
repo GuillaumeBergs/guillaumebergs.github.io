@@ -1546,14 +1546,15 @@ if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du
 		{
 			fromus_desc									=	fromus_objectname;
 		}
-else
-		{
+
+	//Début de la section "limitation de la longueur des données".
 			fromus_desc									=	fromus_desc.substring(0,200);
-		}
+			fromus_objectname						=	fromus_objectname(0,100);
+			fromus_pricemin							=	/[0-9\.]/g.exec(fromus_pricemin);
 	
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
+window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
