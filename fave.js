@@ -637,7 +637,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						//La ligne suivante récupère le dernier prix de l'élément, qui est le prix avec discount le cas échéant
 
 						fromus_pricemintmp				=	document.getElementById("quickViewPrices").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
-						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
+						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 			alert(	fromus_pricemin);
 					}
 					
