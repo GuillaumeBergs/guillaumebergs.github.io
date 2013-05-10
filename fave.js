@@ -503,10 +503,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 		case "www.juicycouture.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("productname");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
-				fromus_objectname				=	fromus_objectname.replace("<!-- Product Name Display -->","");
-				fromus_objectname				=	fromus_objectname.replace("amp;","");				
+				fromus_objectname			=	document.getElementsByClassName("product-name").innerText;		
 			
 				fromus_pricemintmp				=	document.getElementsByClassName("standardprice");
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
