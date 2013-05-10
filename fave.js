@@ -494,7 +494,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 					
 				fromus_img						=	document.getElementById("mapImageSjElement4_img").src;
-				alert("ok");
+
 				if(document.getElementsByClassName("pdp_brand_desc_info")[0]!=undefined)
 					{
 						fromus_desc						=	document.getElementsByClassName("pdp_brand_desc_info")[0].innerText;
@@ -512,8 +512,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
 			
-				fromus_img						=	document.getElementById("prodImage").src;				
-				fromus_img						=	fromus_img.replace(/(\$.*\$)/,"");
+				fromus_img							=	document.getElementById("prodImage").src;				
+				fromus_img							=	fromus_img.replace(/(\$.*\$)/,"");
+				
+				fromus_desc							=	document.getElementsByClassName('cnt product-description')[0].innerText;
 			}break;
 			
 		case "www.kohls.com":
