@@ -1156,7 +1156,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(document.getElementById("tabbed-bundle-overview")!=undefined)
 					{
 						fromus_desc					=	document.getElementById("tabbed-bundle-overview").innerText;
+					}			
+				if(document.getElementsByClassName("csc-medium-column csc-last-column")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("csc-medium-column csc-last-column")[0].innerText;
 					}					
+				if(document.getElementById("features")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("features").innerText;
+					}
+
 			}break;
 
 		case "www.urbandecay.com":
