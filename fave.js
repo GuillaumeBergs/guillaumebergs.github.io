@@ -1019,6 +1019,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 			
 				fromus_img						=	document.getElementById("main_product_image").src;	
+			// Pas de description des produits? (13 mai 2013)
 			}break;
 
 		case "www.bodybuilding.com":
@@ -1030,6 +1031,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_imgtmp					=	document.getElementsByClassName("boom-three-column product-image vat")[0].innerHTML;
 				fromus_img						=	/\<img src=\"(.*\.jpg)/.exec(fromus_imgtmp)[1];
+
+				if(document.getElementsByClassName("product-content")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("product-content")[0].innerText;
+					}				
+				
 			}break;
 		
 		case "www.daddiesboardshop.com":
