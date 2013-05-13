@@ -1064,9 +1064,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_img						=	document.getElementById("mainpic").src;
 				
-				if(document.getElementsByClassName("descwrap")[0]!=undefined)
+				if(document.getElementById("item-info")[0]!=undefined)
 					{
-						fromus_desc					=	document.getElementsByClassName("descwrap")[0].innerText;
+						fromus_desc					=	document.getElementById("item-info")[0].innerText;
 					}
 			}break;
 
