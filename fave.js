@@ -942,9 +942,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_img						=	document.getElementById("curImageZoom").src;	
 
-				if(document.getElementById("additionalInfo")!=undefined)
+				if(document.getElementById("tabset_productPage")!=undefined)
 					{
-						fromus_desc					=	document.getElementById("additionalInfo").innerText;
+						fromus_desc					=	document.getElementById("tabset_productPage").innerText;
 					}			
 			}break;
 			
