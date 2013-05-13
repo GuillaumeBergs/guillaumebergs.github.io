@@ -979,6 +979,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 							}			
 						fromus_img						=	document.getElementById("detailMain").src;							
 					}
+					
+			// Pas de description des produits? (13 mai 2013)
 			}break;
 			
 		case "www.afloral.com":
@@ -997,9 +999,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp	=	document.getElementById("item-info").innerHTML;
 						fromus_objectname		=	/\<h1 itemprop=\"name\"\>(.*)\<\/h1\>/.exec(fromus_objectnametmp)[1];
 						
-						fromus_pricemin			=	document.getElementsByClassName("current-price")[0].innerText;
-						
-							
+						fromus_pricemin			=	document.getElementsByClassName("current-price")[0].innerText;	
+					}		
+				if(document.getElementsByClassName("desc")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("desc")[0].innerText;
+					}
+				if(document.getElementById("item-description")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("item-description").innerText;
 					}					
 			}break;
 
