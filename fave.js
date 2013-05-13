@@ -1241,6 +1241,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	fromus_reg.exec(fromus_objectnametmp)[0];
 
 				fromus_img						=	document.getElementById("productImg").src;
+				
+				if(document.getElementById("item_description")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("item_description").innerText;
+					}				
 			}break;
 
 		case "www.nyxcosmetics.com":
