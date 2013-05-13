@@ -895,12 +895,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectname				=	fromus_objectnametmp[0].innerText;								
 					}
 
-				fromus_pricemin					=	document.getElementById("displayPrice").innerText;
-				fromus_img						=	document.getElementById("largeImage").src;	
+				fromus_pricemin							=	document.getElementById("displayPrice").innerText;
+				fromus_img									=	document.getElementById("largeImage").src;	
 
 				if(document.getElementById("overview")!=undefined)
 					{
-						fromus_desc					=	document.getElementById("overview").innerText;
+						fromus_desc							=	document.getElementById("overview").innerText;
 					}
 			}break;				
 			
@@ -922,7 +922,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				=	document.getElementsByClassName("offerPrice");
 						fromus_pricemin					=	fromus_pricemintmp[0].innerText;
 					}
-				fromus_img						=	document.getElementById("heroImage").src;			
+				fromus_img						=	document.getElementById("heroImage").src;
+
+				if(document.getElementsByClassName("extraProductLink horzBorder")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("extraProductLink horzBorder")[0].innerText;
+					}
+					if(document.getElementsByClassName("context-buttom-gap tabtextfont")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("context-buttom-gap tabtextfont")[0].innerText;
+					}			
 			}break;
 
 		case "www.toysrus.com":
@@ -1669,4 +1678,4 @@ localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
