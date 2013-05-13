@@ -1062,11 +1062,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementById("priceinfo").innerText;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_img						=	document.getElementById("mainpic").src;
+				fromus_img							=	document.getElementById("mainpic").src;
 				
-				if(document.getElementById("item-info")[0]!=undefined)
+				if(document.getElementById("item-info")!=undefined)
 					{
-						fromus_desc					=	document.getElementById("item-info")[0].innerText;
+						fromus_desc					=	document.getElementById("item-info").innerText;
 					}
 			}break;
 
