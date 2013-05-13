@@ -856,6 +856,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
 				fromus_img = "Recuperation manuelle necessaire";
+				
+				if(document.getElementsByClassName("productCopy-container")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("productCopy-container")[0].innerText;
+					}
+				if(document.getElementById("product-description")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("product-description").innerText;
+					}
 			}break;
 
 		case "www.shoes.com":
