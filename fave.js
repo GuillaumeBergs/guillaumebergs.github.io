@@ -1078,6 +1078,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
 				fromus_img						=	document.getElementById("swatchImage").src;
+				
+				if(document.getElementById("detailReviewsLeft")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("detailReviewsLeft").innerText;
+					}				
 			}break;
 
 		case "www.ae.com":
@@ -1699,7 +1704,7 @@ if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du
 		}
 
 	//Début de la section "limitation de la longueur des données".
-			fromus_desc									=	fromus_desc.substring(0,200);
+			fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
 			fromus_objectname						=	fromus_objectname.substring(0,100);
 			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
 	
