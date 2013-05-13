@@ -1219,6 +1219,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
 					}
 					
+				if(document.getElementsByClassName("product-info")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("product-info")[0].innerText;
+					}
+					
+
+				
 				fromus_pricemintmp				=	document.getElementsByClassName("purchase-row")[0].innerText;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
