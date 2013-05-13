@@ -1192,7 +1192,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_imgtmp					=	document.getElementsByClassName("mainImage")[0].innerHTML.replace(/\s/gi,'');
 				fromus_img						=	"https://www.toofaced.com"+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
-				
+		alert("new problem");		
 				if(document.getElementsByClassName("productSummary")[0]!=undefined)
 					{
 						fromus_desc					=	document.getElementsByClassName("productSummary")[0].innerText;
