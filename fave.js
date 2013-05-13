@@ -1063,6 +1063,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
 				fromus_img						=	document.getElementById("mainpic").src;
+				
+				if(document.getElementsByClassName("descwrap")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("descwrap")[0].innerText;
+					}
 			}break;
 
 		case "www.altrec.com":
