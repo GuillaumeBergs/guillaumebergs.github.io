@@ -944,7 +944,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				if(document.getElementById("tabset_productPage")!=undefined)
 					{
-						fromus_desc					=	document.getElementById("tabset_productPage").innerText;
+						fromus_desc					=	/description(.*)/i.exec(document.getElementById("tabset_productPage").innerText);
 					}			
 			}break;
 			
