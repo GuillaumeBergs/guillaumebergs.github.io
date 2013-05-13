@@ -1151,7 +1151,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(/;/.test(fromus_img))	// Certaines src n'ont pas d'extension, elles sont coupées au ; et cette vérification tronque
 					{						// ce qui dépasse
 						fromus_img				=	fromus_img.replace(/;.*/g,'');
-					}	
+					}
+					
+				if(document.getElementById("tabbed-bundle-overview")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("tabbed-bundle-overview").innerText;
+					}					
 			}break;
 
 		case "www.urbandecay.com":
