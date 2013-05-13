@@ -896,7 +896,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 
 				fromus_pricemin					=	document.getElementById("displayPrice").innerText;
-				fromus_img						=	document.getElementById("largeImage").src;				
+				fromus_img						=	document.getElementById("largeImage").src;	
+
+				if(document.getElementById("overview")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("overview").innerText;
+					}
 			}break;				
 			
 		case "www.target.com":
