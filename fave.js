@@ -809,7 +809,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				fromus_pricemin					=	document.getElementById("salePrice").innerText;		
 		
-				fromus_img						=	document.getElementById("imgZoom").src;						
+				fromus_img						=	document.getElementById("imgZoom").src;	
+
+				if(document.getElementById("info")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("info").innerText;
+					}
+				if(document.getElementById("details")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("details").innerText;
+					}				
 			}break;
 		
 		case "www.saksfifthavenue.com":
@@ -1639,5 +1648,5 @@ if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du
 localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
-
+	
 window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
