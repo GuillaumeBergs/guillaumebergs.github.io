@@ -1093,6 +1093,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_imgtmp						=	document.getElementById("imgHolder").innerHTML;
 				fromus_img						=	"http:"+/\<img src=\"(.*)\" alt/.exec(fromus_imgtmp)[1];
+				
+				if(document.getElementsByClassName("addlEquity")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("addlEquity")[0].innerText;
+					}
 			}break;			
 		
 		case "www.bhphotovideo.com":
