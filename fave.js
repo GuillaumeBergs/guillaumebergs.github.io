@@ -1176,6 +1176,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
 
 				fromus_img			=	document.getElementsByClassName("product-imageMain")[0].src;
+				
+				if(document.getElementsByClassName("mainattributes")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("mainattributes")[0].innerText;
+					}				
 			}break;
 
 		case "www.toofaced.com":
