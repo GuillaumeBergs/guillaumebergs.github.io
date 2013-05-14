@@ -1624,6 +1624,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
 						fromus_img					=	document.getElementById("threesixty-image").src;
+						
+						if(document.getElementsByClassName("mds-area-pn1")[0]!=undefined)
+							{
+								fromus_desc					=	document.getElementsByClassName("mds-area-pn1")[0].innerText;
+							}						
 					}
 			}break;
 
