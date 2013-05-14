@@ -1740,9 +1740,6 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{
 						fromus_desc					=	document.getElementsByClassName("product-description selected")[0].innerText;
 					}			
-			
-			
-			
 			}break;
 			
 		case "www.fossil.com":
@@ -1752,6 +1749,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_pricemin						=	/(\$[0-9]{0,}[\.0-9]{0,3})$/.exec(document.getElementById("productPrice").innerText.replace(/\s/g,''))[0];
 
 					fromus_img							=	document.getElementById("mainImage").getElementsByTagName("img")[0].src;
+			
+				if(document.getElementsByClassName("descText")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("descText")[0].innerText;
+					}			
 			}break;
 			
 		case "www.collectiblestampsgallery.com":
