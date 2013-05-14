@@ -1439,8 +1439,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				=	document.getElementsByClassName('parbase ts_attr_c1 section')[0].innerText;
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
-						fromus_imgtmp					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
-						fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+						if(document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0]!=undefined)
+							{	
+								fromus_imgtmp					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
+								fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+							}
 					}
 			
 				if(document.getElementsByClassName("mod modCnt_well_1 mds-cmp-content20")[0]!=undefined)
