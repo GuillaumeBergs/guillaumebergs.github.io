@@ -177,10 +177,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_img						=	document.getElementById("prodImage").src;
 					}
 					
-				fromus_pricemintmp				=	document.getElementsByClassName("priceLarge")[0].innerHTML;
-				fromus_pricemintmp				+=	'';
-				fromus_pricemin					=	fromus_pricemintmp;
-				
+				if(document.getElementsByClassName("priceLarge")[0]!=undefined)
+					{
+						fromus_pricemin					=	document.getElementsByClassName("priceLarge")[0].innerText;
+					}
+				if(document.getElementById("listPriceValue")!=undefined)
+					{
+						fromus_pricemin					=	document.getElementById("listPriceValue").innerText;
+					}				
+		
 				if(document.getElementById("productDescription")!=undefined)
 					{
 						fromus_desc						=	document.getElementById("productDescription").textContent;
@@ -1253,19 +1258,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.nyxcosmetics.com":
 			{
 				if(document.getElementById("product-description")!=undefined)
-					{	// Fiche
-						fromus_objectnametmp			=	document.getElementById("product-description").innerHTML.replace(/[^A-Z\s]/g,'');		
-						fromus_objectnametmp			=	/[\s]{0,}[A-Z]{1,}(.*)[A-Z]{1,}[\s]/.exec(fromus_objectnametmp)[0];		
-						fromus_objectname				=	/[\s]{1,}(.*)/.exec(fromus_objectnametmp.replace(/[A-Z]{1,}/,' '))[1];
-						fromus_objectname 				=	fromus_objectname.replace(/\s/g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.');
-						fromus_objectname 				=	fromus_objectname.replace(/\./g,' ');
-						fromus_objectname 				=	fromus_objectname.split(' ');
-						fromus_objectnametmp			=	fromus_objectname[0]+' '+fromus_objectname[1]+' '+fromus_objectname[3]+' '+fromus_objectname[5]+' '+fromus_objectname[7]+' '+fromus_objectname[9];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[11]+' '+fromus_objectname[13]+' '+fromus_objectname[15]+' '+fromus_objectname[17];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[19]+' '+fromus_objectname[21]+' '+fromus_objectname[23]+' '+fromus_objectname[25];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[27]+' '+fromus_objectname[29]+' '+fromus_objectname[31]+' '+fromus_objectname[33];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[35]+' '+fromus_objectname[37]+' '+fromus_objectname[39]+' '+fromus_objectname[41];
-						fromus_objectname				=	fromus_objectnametmp.replace(/ undefined/g,'');
+					{	// Fiche		
+						fromus_objectname				=	document.getElementById("product-description").getElementsByTagName("h1")[0].textContent;
 									
 						fromus_pricemintmp				= 	document.getElementById("price").textContent;
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];		
@@ -1277,19 +1271,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else
 					{	// Preview
-						fromus_objectnametmp			=	document.getElementsByClassName("product-meta")[0].firstChild.innerHTML.replace(/[^A-Z\s]/g,'');		
-						fromus_objectnametmp			=	/[\s]{0,}[A-Z]{1,}(.*)[A-Z]{1,}[\s]/.exec(fromus_objectnametmp)[0];		
-						fromus_objectname				=	/[\s]{1,}(.*)/.exec(fromus_objectnametmp.replace(/[A-Z]{1,}/,' '))[1];
-						
-						fromus_objectname 				=	fromus_objectname.replace(/\s/g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.');
-						fromus_objectname 				=	fromus_objectname.replace(/\./g,' ');
-						fromus_objectname 				=	fromus_objectname.split(' ');
-						fromus_objectnametmp			=	fromus_objectname[0]+' '+fromus_objectname[1]+' '+fromus_objectname[3]+' '+fromus_objectname[5]+' '+fromus_objectname[7]+' '+fromus_objectname[9];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[11]+' '+fromus_objectname[13]+' '+fromus_objectname[15]+' '+fromus_objectname[17];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[19]+' '+fromus_objectname[21]+' '+fromus_objectname[23]+' '+fromus_objectname[25];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[27]+' '+fromus_objectname[29]+' '+fromus_objectname[31]+' '+fromus_objectname[33];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[35]+' '+fromus_objectname[37]+' '+fromus_objectname[39]+' '+fromus_objectname[41];
-						fromus_objectname				=	fromus_objectnametmp.replace(/ undefined/g,'');
+						fromus_objectname				=	document.getElementById("product-meta").getElementsByTagName("h1")[0].textContent;
 
 						fromus_pricemintmp				= 	document.getElementsByClassName("variantprice")[0].textContent;
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
