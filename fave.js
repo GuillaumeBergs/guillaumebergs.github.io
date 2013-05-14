@@ -1389,9 +1389,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}			
 						fromus_pricemintmp				= 	document.getElementsByClassName("pricing")[0].innerText;
 						fromus_pricemin					=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/.exec(fromus_pricemintmp)[0];	
-				if(document.getElementsByClassName("trunc")[0]!=undefined)
+				if(document.getElementsByClassName("full trunc-on")[0]!=undefined)
 					{
-						fromus_desc					=	document.getElementsByClassName("trunc")[0].innerText;
+						fromus_desc					=	document.getElementsByClassName("full trunc-on")[0].innerText;
 					}						
 			}break;
 	
@@ -1796,4 +1796,4 @@ var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;	
 
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
