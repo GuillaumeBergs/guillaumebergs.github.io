@@ -4,8 +4,7 @@
 // Objectif du script: Récupérer les informations de nom, site, page, image et prix de l'offre.			//
 //																																			//
 // NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
-// dans une application, un plugin ou autre page web. La présence de commentaires					//
-// empêche l'utilisation de ce code comme favelet.																	//
+// dans une application, un plugin ou autre page web. 																//
 //																																			//
 // Ajouter des sites est simple: il suffit d'ajouter des "case" supplémentaires tout en 					//
 // suivant la structure déjà existante.																						//
@@ -88,8 +87,6 @@
 //																																			//
 //																																			//
 //																																			//	
-
-//javascript:	// Permet l'exécution comme favelet, à supprimer du code pour toute autre utilisation.
 
 /////	Définition des variables	/////
 
@@ -1410,6 +1407,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{	// Fiche
 						fromus_img						=	document.getElementById("largeProductImage").src;						
 					}
+			
+				if(document.getElementById("subdesc_content").getElementsByTagName('div')[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementById("subdesc_content").getElementsByTagName('div')[0].innerText;
+					}			
 			}break;
 	
 		case "www.chevrolet.com":
@@ -1795,5 +1797,3 @@ localStorage["regDesc"] = fromus_desc;
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;	
-
-//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
