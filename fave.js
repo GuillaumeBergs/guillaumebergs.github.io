@@ -68,7 +68,7 @@
 // shop 143 à 145 = www.hottopic.com																					//
 // shop 146 à 153 www.shopkitson.com reporté																		//
 //																																			//
-//																																			//
+//	Infinityusa.com aurait changé de design?																				//
 //																																			//
 //																																			//
 //																																			//
@@ -1651,6 +1651,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						fromus_img						=	"Pas d'image sur cette page";	
 					}
+					
 			}break;	
 
 		case "www.scion.com":
@@ -1676,6 +1677,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						fromus_img						=	"http://www.scion.com"+document.getElementsByClassName("model-detail-background")[0].getAttribute('backstretch');	
 					}
+			
+				if(document.getElementsByClassName("model-detail-block")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("model-detail-block")[0].innerText;
+					}			
 			}break;
 
 			case "www.harley-davidson.com":
