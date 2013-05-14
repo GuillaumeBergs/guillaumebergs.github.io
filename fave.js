@@ -1851,12 +1851,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 					fromus_pricemin						=	document.getElementById("textMultiPrice").innerText;
 
-					fromus_img							=	document.getElementsByClassName("img_prd_detail")[0].src;
+					fromus_img								=	document.getElementsByClassName("img_prd_detail")[0].src;
 				
-				if(document.getElementsByClassName("main_box")[0]!=undefined)
-					{
-						fromus_desc					=	document.getElementsByClassName("main_box")[0].innerText;
-					}
+				
+					fromus_desc								=	"The one and only, superb and fabulous "fromus_objectname;
 			}break;
 
 		case "www.gilt.com":
