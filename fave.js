@@ -1411,7 +1411,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(document.getElementById("subdesc_content")!=undefined)
 					{
 						fromus_desc					=	document.getElementById("subdesc_content").innerText;
-					}			
+					}
+
+				if(document.getElementById("subdesc_content").getElementsByTagName('div')[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementById("subdesc_content").getElementsByTagName('div')[0].innerText;
+					}				
 			}break;
 	
 		case "www.chevrolet.com":
