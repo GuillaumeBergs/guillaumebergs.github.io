@@ -25,4 +25,4 @@ getSelectionHTML = function () {
   }
 };
 
-alert(getSelectionHTML);
+alert(getSelectionHTML());
