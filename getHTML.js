@@ -24,5 +24,10 @@ getSelectionHTML = function () {
     return '';
   }
 };
+var fromus_txt  = getSelectionHTML();
+alert(fromus_txt);
+if(/id=\"/.test(fromus_txt))
+{alert(/id=\".*/.test(fromus_txt));}
+if(/class=\"/.test(fromus_txt))
+{alert(/class=\".*/.test(fromus_txt));}
 
-alert(getSelectionHTML());
