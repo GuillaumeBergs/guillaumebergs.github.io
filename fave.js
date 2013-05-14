@@ -1339,12 +1339,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_objectnametmp			=	document.getElementById("product-meta").innerText;
 				fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
 				
-				fromus_desc							=	/[A-Z]{1}[a-z][1](.*)/.exec(fromus_objectnametmp.replace(/\n/gi,''))[0];
-				
 				fromus_pricemin					=	document.getElementsByClassName("product-price")[0].innerText;
 
 				fromus_imgtmp					=	document.getElementById("product-image-large").innerHTML;
 				fromus_img						=	'http://www.smashbox.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				
+				if(document.getElementById("product-meta")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("product-meta").innerText;
+					}
 			}break;			
 
 		case "www.victoriassecret.com":
