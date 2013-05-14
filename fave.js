@@ -1763,6 +1763,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_pricemin						=	document.getElementById("pricediv0").innerText;
 
 					fromus_img							=	document.getElementById("prodimage0").src;
+					
+					if(document.getElementsByClassName("detaildescription")[0]!=undefined)
+						{
+							fromus_desc					=	document.getElementsByClassName("detaildescription")[0].innerText;
+						}
 			}break;			
 				
 		case "www.bebe.com":
