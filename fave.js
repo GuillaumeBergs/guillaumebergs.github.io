@@ -1853,7 +1853,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 					fromus_img							=	document.getElementsByClassName("img_prd_detail")[0].src;
 				
-				
+				if(document.getElementsByClassName("main_box")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("main_box")[0].innerText;
+					}
 			}break;
 
 		case "www.gilt.com":
