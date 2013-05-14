@@ -1803,6 +1803,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_pricemin						=	fromus_reg.exec(document.getElementsByClassName("pricecolor colors_productprice")[0].innerText)[0];
 
 					fromus_img							=	document.getElementById("product_photo").src;
+					
+				if(document.getElementsByClassName("colors_descriptionbox")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("colors_descriptionbox")[0].innerText;
+					}					
 			}break;
 		
 		case "www.hottopic.com":
