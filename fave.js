@@ -1566,11 +1566,17 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/buick.com\/(.*)\.html/.exec(fromus_objectnametmp)[1].replace(/-/g,' ');
 
-						fromus_pricemintmp				=	document.getElementsByClassName('txt3')[0].innerText;
-						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
+						if(document.getElementsByClassName("txt3")[0]!=undefined)
+							{
+								fromus_pricemintmp				=	document.getElementsByClassName('txt3')[0].innerText;
+								fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
+							}
 
-						fromus_imgtmp					=	document.getElementsByClassName("mod modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
-						fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+						if(document.getElementsByClassName("mod modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0]!=undefined)
+							{
+								fromus_imgtmp					=	document.getElementsByClassName("mod modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
+								fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+							}
 					}
 			
 				if(document.getElementsByClassName("fck_authorsinput tx")[0]!=undefined)
