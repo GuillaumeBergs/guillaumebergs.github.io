@@ -1408,9 +1408,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_img						=	document.getElementById("largeProductImage").src;						
 					}
 			
-				if(document.getElementById("subdesc_content").getElementsByTagName('div')[0]!=undefined)
+				if(document.getElementById("subdesc_content")!=undefined)
 					{
-						fromus_desc					=	document.getElementById("subdesc_content").getElementsByTagName('div')[0].innerText;
+						fromus_desc					=	document.getElementById("subdesc_content").innerText;
 					}			
 			}break;
 	
