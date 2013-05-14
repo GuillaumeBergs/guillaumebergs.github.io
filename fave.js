@@ -1587,7 +1587,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 		case "www.lincoln.com":
 			{
-				fromus_objectname				=	document.getElementById("overviewTitle").innerText.replace(/\n.*/,"");
+				fromus_objectname				=	document.getElementsByClassName("nameplate-titlename")[0].innerText;
 
 				fromus_pricemintmp				=	document.getElementById('starting-price-vehicle').innerText;
 				fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
