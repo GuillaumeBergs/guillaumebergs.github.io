@@ -1388,7 +1388,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
 					}			
 						fromus_pricemintmp				= 	document.getElementsByClassName("pricing")[0].innerText;
-						fromus_pricemin					=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/.exec(fromus_pricemintmp)[0];		
+						fromus_pricemin					=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/.exec(fromus_pricemintmp)[0];	
+				if(document.getElementsByClassName("trunc")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("trunc")[0].innerText;
+					}						
 			}break;
 	
 		case "www.staples.com":
