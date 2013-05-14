@@ -1789,6 +1789,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 							fromus_img					=	document.getElementsByClassName("entity-image")[0].getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
 						}
+						
+				if(document.getElementsByClassName("description")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
+					}
 			}break;		
 
 		case "www.shopblackjack.com":
