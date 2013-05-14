@@ -93,9 +93,6 @@
 
 /////	Définition des variables	/////
 
-if(localStorage["regPrice"] ==undefined)		//DEBUG: permet de savoir si le code est utilisé en favelet ou dans le plugin
-{var fromus_testfavelet	=	1;}
-
 var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
 var fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 var fromus_objectname,
@@ -1758,7 +1755,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				fromus_objectname				=	"non trouve";
 				fromus_pricemin					=	"non trouve";
-				fromus_img						= 	"non trouve";
+				fromus_img							= 	"non trouve";
 			}
 	}
 if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du produit.
@@ -1773,10 +1770,16 @@ if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du
 	
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
-// stockage du prix dans local storage
-localStorage["regPrice"] = fromus_pricemin;		
 
-if(fromus_testfavelet != undefined)	// DEBUG: Si on est dans une favelet
-	{		
-		window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
-	}	
+// stockage du prix dans local storage
+localStorage["regPrice"] = fromus_pricemin;
+
+// stockage de la description dans local storage
+localStorage["regDesc"] = fromus_desc;			
+
+// stockage de la page du site dans local storage
+var wwwOffre = fromus_offre.replace(/www\./,'');
+localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
+//localStorage["regOffer"] = fromus_offre;	
+
+window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
