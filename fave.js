@@ -1500,10 +1500,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/dodge\.com.*(\/.*\/)$/.exec(fromus_objectnametmp)[1].replace(/\//g,' ');
 
-						fromus_pricemintmp				=	document.getElementById('msrp').innerText;
-						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
-
-						fromus_img					=	document.getElementsByClassName("background")[0].src;
+						if(document.getElementsByClassName("background")[0]!=undefined)
+							{
+								fromus_img					=	document.getElementsByClassName("background")[0].src;
+							}
+						if(document.getElementById("msrp")!=undefined)
+							{
+								fromus_pricemintmp				=	document.getElementById('msrp').innerText;
+								fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
+							}						
 					}
 
 				if(document.getElementsByClassName("specs_content")[0]!=undefined)
