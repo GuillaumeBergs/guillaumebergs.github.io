@@ -1685,11 +1685,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			}break;
 
 			case "www.harley-davidson.com":
-			{alert("harley-davidson");
+			{//alert("harley-davidson");
 				fromus_harleypage						=	/harley-davidson\.com\/(.*)\//.exec(fromus_offre)[1];
 		
 				if(fromus_harleypage=="shop")
-					{alert("shop");
+					{//alert("shop");
 						fromus_pricemin			=	document.getElementById("productPrice").innerText;
 				alert(fromus_pricemin);		
 						fromus_objectname		=	document.getElementById("detailsContent").innerText;
@@ -1699,17 +1699,17 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				
 				if(fromus_harleypage=="store")
-					{alert("store");
+					{//alert("store");
 						
 					}
 					
 				if(fromus_harleypage=="en_US/Motorcycles")
-					{alert("motor");
+					{//alert("motor");
 		
 					};
 					
 				if(fromus_harleypage=="used_bikes")
-					{alert("used");
+					{//alert("used");
 						
 					}
 
@@ -1735,6 +1735,14 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 					fromus_img						=	document.getElementById("product-detail-image").getElementsByTagName('img')[0].src;
 				}
+			
+				if(document.getElementsByClassName("product-description selected")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("product-description selected")[0].innerText;
+					}			
+			
+			
+			
 			}break;
 			
 		case "www.fossil.com":
