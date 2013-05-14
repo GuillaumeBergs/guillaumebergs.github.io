@@ -1817,6 +1817,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_pricemin						=	/(\$[0-9\,]{0,}\.[0-9]{0,})$/.exec(document.getElementById("product-price").innerText.replace(/\s/g,''))[0];
 
 					fromus_img							=	document.getElementById("product-image").getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
+					
+				if(document.getElementById("productDesc")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("productDesc").innerText;
+					}					
 			}break;
 	
 		case "www.shopangl.com":
