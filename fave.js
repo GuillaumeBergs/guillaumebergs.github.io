@@ -1597,6 +1597,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
 				
 				fromus_img						=	"Recuperation automatique impossible";
+				
+				if(document.getElementById("overviewTitle")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("overviewTitle").innerText;
+					}				
 			}break;	
 
 		case "www.gmc.com":
