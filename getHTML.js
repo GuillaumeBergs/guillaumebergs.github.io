@@ -27,7 +27,7 @@ getSelectionHTML = function () {
 var fromus_txt  = getSelectionHTML().replace(/\n/g,'');
 alert(fromus_txt);
 if(/id=\"/.test(fromus_txt))
-{alert(/id=\"[^\"]{1,}\"/g.exec(fromus_txt));}
+{alert(/(id=\"[^\"]{1,}\")/gi.exec(fromus_txt));}
 if(/class=\"/.test(fromus_txt))
-{alert(/class=\"[^\"]{1,}\"/g.exec(fromus_txt));}
+{alert(/(class=\"[^\"]{1,}\")/gi.exec(fromus_txt));}
 
