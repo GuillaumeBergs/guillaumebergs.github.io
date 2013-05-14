@@ -1295,6 +1295,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_imgtmp					=	document.getElementsByClassName("product-img")[0].innerHTML;
 						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];							
 					}
+				if(document.getElementsByClassName("description")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
+					}
+				if(document.getElementById("description-content")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("description-content").innerText;
+					}				
+				
+					
 				fromus_objectname				=	fromus_objectname.toLowerCase();	// Personne n'aime lire du texte en CAPSLOCK		
 			}break;
 			
