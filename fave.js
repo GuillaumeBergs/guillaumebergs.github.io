@@ -1522,8 +1522,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}break;
 			
 		case "www.chrysler.com":
-			{
-			
+			{		
 				if( /hostc\/bmo/.test(fromus_offre))
 					{	// S'il s'agit d'une page "buid your own vehicule"
 						fromus_objectname				=	document.getElementsByClassName("bmo-vehicleName")[0].innerText;
@@ -1547,11 +1546,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 						fromus_img						=	"Recuperation automatique impossible";
 					}
+			
+//Pas de véritable description		
 			}break;
 		
 		case "www.buick.com":
-			{
-			
+			{	
 				if( /build-your-own/.test(fromus_offre))
 					{	// S'il s'agit d'une page "buid your own vehicule"
 						fromus_objectname				=	document.getElementById("totalPriceContainer").innerText;
@@ -1572,6 +1572,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_imgtmp					=	document.getElementsByClassName("mod modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
 						fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
 					}
+			
+				if(document.getElementsByClassName("fck_authorsinput tx")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("fck_authorsinput tx")[0].innerText;
+					}			
 			}break;
 	
 		case "www.lincoln.com":
