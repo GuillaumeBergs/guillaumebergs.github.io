@@ -1339,7 +1339,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_objectnametmp			=	document.getElementById("product-meta").innerText;
 				fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
 				
-				fromus_desc							=	/\n(.*)/.exec(fromus_objectnametmp)[0];
+				fromus_desc							=	/[A-Z]{1}[a-z][1](.*)/.exec(fromus_objectnametmp)[0];
 				
 				fromus_pricemin					=	document.getElementsByClassName("product-price")[0].innerText;
 
