@@ -1505,7 +1505,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						fromus_img					=	document.getElementsByClassName("background")[0].src;
 					}
-			}break;
+
+				if(document.getElementsByClassName("specs_content")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("specs_content")[0].innerText;
+					}
+				if(document.getElementById("detail")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("detail").innerText;
+					}
+					}break;
 			
 		case "www.chrysler.com":
 			{
