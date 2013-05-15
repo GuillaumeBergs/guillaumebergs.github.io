@@ -2,7 +2,7 @@
 // Dans le cadre de son stage du 15/04/13 au 24/06/13																//
 //																				//
 // Objectif du script: 	Récupérer les informations de nom, site, page, image, description 			//
-//								et prix de l'offre.																						//
+//	   							et prix de l'offre.																						//
 //																																			//
 // NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
 // dans une application, un plugin ou autre page web. 																//
