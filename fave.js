@@ -312,8 +312,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 		case "www.walmart.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("productTitle");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
+				fromus_objectname			=	document.getElementsByClassName("productTitle").textContent;
 				
 				fromus_img						= 	document.getElementById('Zoomer').href;
 
