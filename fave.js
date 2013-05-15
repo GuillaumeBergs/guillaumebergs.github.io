@@ -445,20 +445,18 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.jcrew.com":
 			{	
 				fromus_objectname				=	document.getElementById("pdp-title").textContent;		
-alert(fromus_objectname);
+
 				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent.replace(/\s/g,'');
-alert(fromus_pricemintmp);
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];				
-alert(fromus_pricemin);
+
 				fromus_img							=	document.getElementById("mainImg").src;
-alert(fromus_img);
+
 				fromus_desc							=	document.getElementsByClassName('descmore_text')[1].textContent;
 			}break;
 		
 		case "www.jcpenney.com":
 			{	
-				fromus_objectnametmp			=	document.getElementsByClassName("def_cur pdp_title");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML.replace("\n","");		
+				fromus_objectname				=	document.getElementsByClassName("def_cur pdp_title")[0].textContent.replace("\n","");		
 		
 				fromus_pricemintmp				=	document.getElementById("priceDetails").textContent;				
 				fromus_pricemintmp					=	/(\$[0-9]{0,}[\.]{0,1}[0-9]{0,2})$/gi.exec(fromus_pricemintmp);
