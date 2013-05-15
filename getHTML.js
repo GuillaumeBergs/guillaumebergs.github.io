@@ -75,4 +75,4 @@ else
   }  
 }
 alert("Et ce qui est affiché dans la case est...");
-alert(window.getSelection());
+alert(window.getSelection().textContent);
