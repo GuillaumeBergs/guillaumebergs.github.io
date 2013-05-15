@@ -49,14 +49,14 @@ if(fromus_idmatch !=undefined)
   {
      // id et class
      
- alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>");
- alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0]+"<\/getprodprice>");
+ alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[1]+"<\/getprodprice>");
+ alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[1]+"<\/getprodprice>");
      
   }
     else
   {
     //id sans class
- alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>");
+ alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[1]+"<\/getprodprice>");
       
   }
 }
@@ -65,7 +65,7 @@ else
     if(fromus_classmatch !=undefined)
   {
 
- alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0]+"<\/getprodprice>");
+ alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[1]+"<\/getprodprice>");
   
   }
     else
