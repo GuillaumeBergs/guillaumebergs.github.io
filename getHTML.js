@@ -24,10 +24,47 @@ getSelectionHTML = function () {
     return '';
   }
 };
-var fromus_txt  = getSelectionHTML();
-fromus_txt      = fromus_txt.replace(/\n/g,'');
+var fromus_txt    = getSelectionHTML();
+fromus_txt        = fromus_txt.replace(/\n/g,'');
 alert(fromus_txt);
+
+
+
 if(/id=\"/.test(fromus_txt))
-{alert(fromus_txt.match(/(id=\"[^\"]{1,}\")/mgi));}
+{
+ var fromus_idmatch    = fromus_txt.match(/id=\("[^\"]{1,}\")/mgi)
+  alert("id"+fromus_idmatch);
+  
+}
 if(/class=\"/.test(fromus_txt))
-{alert(fromus_txt.match(/(class=\"[^\"]{1,}\")/mgi));}
+{
+var fromus_classmatch = fromus_txt.match(/class=\("[^\"]{1,}\")/mgi)  
+  alert("class"+fromus_classmatch);
+  
+}
+
+if(fromus_idmatch !=undefined)
+{
+    if(fromus_classmatch !=undefined)
+  {
+     // id et class
+     
+ alert("<getprodpricetype>id<\/getprodpricetype>/n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>"
+     
+  }
+    else
+  {
+    //id sans class
+  }
+}
+else
+{
+    if(fromus_classmatch !=undefined)
+  {
+    //class sans id
+  }
+    else
+  {
+    //ni class ni id
+  }  
+}
