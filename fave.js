@@ -337,13 +337,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementById("productPageContent")!=undefined)
 					{	//Page
-						fromus_objectnametmp			=	document.getElementsByClassName("title")[0].textContent;
+						fromus_objectnametmp			=	document.getElementsByClassName("title")[0].getElementsByTagName("h1")[0].textContent;
 						
 						fromus_desc							=	document.getElementById("productDesc").textContent;
 					}
 				else
 					{	//Preview
-						fromus_objectname				=	document.getElementsByClassName("productTitle")[0].getElementsByTagName("h1")[0].textContent;
+						fromus_objectname				=	document.getElementsByClassName("productTitle")[0].textContent;
 					}
 
 				fromus_imgtmp					=	document.getElementsByClassName("zoom_fixed")[0];
