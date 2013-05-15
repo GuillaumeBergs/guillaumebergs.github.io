@@ -1,6 +1,6 @@
 // Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
 // Dans le cadre de son stage du 15/04/13 au 24/06/13																//
-//																																			//
+//																				//
 // Objectif du script: 	Récupérer les informations de nom, site, page, image, description 			//
 //								et prix de l'offre.																						//
 //																																			//
