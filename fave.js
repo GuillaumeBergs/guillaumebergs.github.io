@@ -300,9 +300,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 						if(document.getElementsByClassName("price sale")[0] != undefined)
 							{	// Si le produit est en promotion
-								fromus_pricemintmp		=	document.getElementsByClassName("price sale")[0].innerHTML;
-								fromus_pricemintmp		= 	fromus_pricemintmp+'';
-								fromus_pricemin			= 	/(\$)[0-9\.]{1,}/gi.exec(fromus_pricemintmp)[0];
+								fromus_pricemin		=	fromus_reg.exec(document.getElementsByClassName("price sale")[0].textContent);
 							}	
 						else
 							{	// Si le produit est à son prix habituel
