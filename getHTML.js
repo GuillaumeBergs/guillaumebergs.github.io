@@ -43,20 +43,21 @@ var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);
   
 }
 
+alert("Ce qui est ajouté à la base de données est...");
+
 if(fromus_idmatch !=undefined)
 {
     if(fromus_classmatch !=undefined)
   {
-     // id et class
-     
- alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
- alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
+     // id et class     
+ alert("<getprodpricetype>\"id\"<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
+ alert("<getprodpricetype>\"class\"<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
      
   }
     else
   {
     //id sans class
- alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
+ alert("<getprodpricetype>\"id\"<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
       
   }
 }
@@ -65,7 +66,7 @@ else
     if(fromus_classmatch !=undefined)
   {
 
- alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
+ alert("<getprodpricetype>\"class\"<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
   
   }
     else
@@ -73,3 +74,5 @@ else
     //ni class ni id
   }  
 }
+alert("Et ce qui est affiché dans la case est...");
+alert(fromus_txt.textContent);
