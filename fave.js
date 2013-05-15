@@ -447,14 +447,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_objectname				=	document.getElementById("pdp-title").textContent;		
 
 				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent;
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/g.exec(fromus_pricemin)[0];				
+				fromus_pricemin					=	fromus_reg.exec(fromus_pricemin)[0];				
 
-				fromus_imgtmp					=	document.getElementsByClassName("prod_main_img")[0].innerHTML;
-				fromus_imgtmp					+=	'';				
-				fromus_img						= 	/(http\:\/\/.*)(\?\$pdp)/gi.exec(fromus_imgtmp)[0] + '';
-				fromus_img						=	fromus_img.substring(0,fromus_img.length-5);	
+				fromus_img							=	document.getElementById("mainImg").src;
 
-				fromus_desc						=	document.getElementsByClassName('descmore_text')[1].textContent;
+				fromus_desc							=	document.getElementsByClassName('descmore_text')[1].textContent;
 			}break;
 		
 		case "www.jcpenney.com":
