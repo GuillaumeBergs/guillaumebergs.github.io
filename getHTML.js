@@ -49,19 +49,24 @@ if(fromus_idmatch !=undefined)
   {
      // id et class
      
- alert("<getprodpricetype>id<\/getprodpricetype>/n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>");
+ alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>");
+ alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0]+"<\/getprodprice>");
      
   }
     else
   {
     //id sans class
+ alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>");
+      
   }
 }
 else
 {
     if(fromus_classmatch !=undefined)
   {
-    //class sans id
+
+ alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0]+"<\/getprodprice>");
+  
   }
     else
   {
