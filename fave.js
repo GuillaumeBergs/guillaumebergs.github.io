@@ -103,7 +103,7 @@ var fromus_objectname,
 	fromus_img,
 	fromus_desc,
 	fromus_desctmp;
-var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/;
+var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;
 
 /////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
 	
@@ -446,7 +446,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{	
 				fromus_objectname				=	document.getElementById("pdp-title").textContent;		
 alert(fromus_objectname);
-				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent;
+				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent.replace(/\n/g,'');
 alert(fromus_pricemintmp);
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemin)[0];				
 alert(fromus_pricemin);
