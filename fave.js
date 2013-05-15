@@ -419,8 +419,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 		case "www.hautelook.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("product_title");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
+				fromus_objectname				=	document.getElementsByClassName("product_title")[0].textContent;
 		
 				fromus_pricemintmp				=	document.getElementsByClassName("sale_price");
 				fromus_pricemin					=	fromus_pricemintmp[0].textContent + '';	
