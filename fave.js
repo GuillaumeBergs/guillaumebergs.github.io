@@ -157,7 +157,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_imgtmp					= 	fromus_imgtmp+'';
 				fromus_img						= 	/(http)(.*)(\.jpg|\.png|\.gif)/gi.exec(fromus_imgtmp)[0];		
 
-				fromus_pricemint				=	fromus_reg.exec(document.getElementById("priceSlot").textContent)[1];
+				fromus_pricemin				=	fromus_reg.exec(document.getElementById("priceSlot").textContent)[1];
+
 				
 				fromus_desc						=	document.getElementsByClassName("description")[0].textContent;					
 			}break;
