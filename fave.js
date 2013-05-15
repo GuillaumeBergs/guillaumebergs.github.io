@@ -381,31 +381,20 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 		case "www.giggle.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("productname");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
-				fromus_objectname				=	fromus_objectname.replace("<!-- Product Name Display -->","");
-				fromus_objectname				=	fromus_objectname.replace("amp;","");	
+				fromus_objectname			=	document.getElementsByClassName("productname")[0].textContent;
 				
-				fromus_pricemintmp				=	document.getElementsByClassName("descript-price");
-				fromus_pricemin					=	fromus_pricemintmp[0].textContent + '';	
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
+				fromus_pricemintmp				=	document.getElementsByClassName("descript-price")[0].textContent;
+				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemintmp)[0];
 				
 				fromus_desc							=	document.getElementsByClassName("short-description")[0].textContent;
 				
 				if(document.getElementById("wrap")!=undefined)
-					{	//Le noeud change entre l'aperçu et la page dédiée
-				
-						fromus_imgtmp					=	document.getElementById("wrap").innerHTML;
-						fromus_imgtmp					+=	'';		
-
-						fromus_img						= 	/(demandware\.edgesuite\.net.*)(\.jpg|\.png|\.gif)(\")/gi.exec(fromus_imgtmp)[0] + '';
-						fromus_img						=	fromus_img.substring(0,fromus_img.length-1);
+					{	//Page
+						fromus_img					=	document.getElementsById("wrap").getElementsByTagName("a")[0].href;
 					}
 				else
-					{
-						fromus_imgtmp					=	document.getElementById("pdpMain").innerHTML;
-						fromus_imgtmp					+=	'';		
-						fromus_img						= 	/(demandware\.edgesuite\.net)(.*)(jpg|png|gif)/gi.exec(fromus_imgtmp)[0];
+					{	// Preview
+						fromus_img					=	document.getElementsById("productimage QuickViewproductimage").getElementsByTagName("img")[0].src;
 					}
 			}break;
 		
