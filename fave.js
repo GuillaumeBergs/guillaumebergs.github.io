@@ -1872,7 +1872,10 @@ if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefine
 		}
 
 	//Début de la section "limitation de la longueur des données".
-			fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
+			if(fromus_desc.length > 200)
+			{
+					fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
+			}
 			fromus_objectname						=	fromus_objectname.substring(0,100);
 			fromus_pricemin							=	fromus_pricemin.replace(/\$/g,'');
 			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin.replace(',',''))[0]);
