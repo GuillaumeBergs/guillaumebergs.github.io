@@ -448,7 +448,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 alert(fromus_objectname);
 				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent.replace(/\s/g,'');
 alert(fromus_pricemintmp);
-				fromus_pricemin					=	fromus_reg.exec(fromus_pricemin)[0];				
+				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];				
 alert(fromus_pricemin);
 				fromus_img							=	document.getElementById("mainImg").src;
 alert(fromus_img);
