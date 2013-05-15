@@ -150,12 +150,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.6pm.com":
 			{
 				fromus_objectnametmp			=	document.getElementsByClassName("link fn")[0];
-				fromus_objectnametmp			+= 	'';
 				fromus_objectname				= 	fromus_objectnametmp.replace("http\:\/\/www\.6pm\.com\/","").replace(/-/g," ");
 				
-				fromus_imgtmp						=	document.getElementById("detailImage").innerHTML;
-				fromus_imgtmp						= 	fromus_imgtmp+'';
-				fromus_img							= 	/(http)(.*)(\.jpg|\.png|\.gif)/gi.exec(fromus_imgtmp)[0];		
+				fromus_img							=	document.getElementById("detailImage").getElementsByTagName("img")[0].src;
 
 				fromus_pricemintmp				=	document.getElementById("priceSlot").textContent;
 				fromus_pricemin					=	/(?:\$[0-9]{0,}\.[0-9]{2})[ ]{0,}\n{0,}(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemintmp)[1];
