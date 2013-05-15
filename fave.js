@@ -446,7 +446,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{	
 				fromus_objectname				=	document.getElementById("pdp-title").textContent;		
 alert(fromus_objectname);
-				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent.replace(/\n/g,'');
+				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent.replace(/\s/g,'');
 alert(fromus_pricemintmp);
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemin)[0];				
 alert(fromus_pricemin);
