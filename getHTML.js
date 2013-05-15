@@ -82,4 +82,4 @@ else
   }  
 }
 alert("Et ce qui est affiché dans la case est...");
-alert(fromus_selectedtext);
+alert(fromus_selectedText);
