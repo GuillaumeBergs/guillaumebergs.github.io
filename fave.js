@@ -345,8 +345,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else
 					{	//Preview
-						fromus_objectnametmp			=	document.getElementsByClassName("productTitle");
-						fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
+						fromus_objectname				=	document.getElementsByClassName("productTitle")[0].textContent;
 					}
 
 				fromus_imgtmp					=	document.getElementsByClassName("zoom_fixed")[0];
