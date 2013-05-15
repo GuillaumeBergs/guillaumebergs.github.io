@@ -28,6 +28,6 @@ var fromus_txt  = getSelectionHTML();
 fromus_txt      = fromus_txt.replace(/\n/g,'');
 alert(fromus_txt);
 if(/id=\"/.test(fromus_txt))
-{alert(fromus_txt.match(/(id=\"[^\"]{1,}\")/gi));}
+{alert(fromus_txt.match(/(id=\"[^\"]{1,}\")/mgi));}
 if(/class=\"/.test(fromus_txt))
-{alert(fromus_txt.match(/(class=\"[^\"]{1,}\")/gi));}
+{alert(fromus_txt.match(/(class=\"[^\"]{1,}\")/mgi));}
