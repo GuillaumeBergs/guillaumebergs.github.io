@@ -1050,11 +1050,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				fromus_objectname				=	document.getElementsByClassName("product-name")[0].textContent.replace("\n"," ");
 
-				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].textContent;
-				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
+				fromus_pricemin				=	document.getElementsByClassName("price")[0].textContent;
 
-				fromus_imgtmp					=	document.getElementsByClassName("product-image image-zoom")[0].innerHTML;
-				fromus_img						=	/\<img src=\"(.*\.jpg)/.exec(fromus_imgtmp)[1];
+				fromus_img						=	document.getElementById("main-image").href;
 				
 				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
@@ -1763,7 +1761,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						{	// S'il s'agit d'une preview
 							fromus_objectname			=	document.getElementsByClassName("product-information jsDescriptionWrap")[0].getElementsByTagName("h1")[0].getElementsByTagName("a")[0].textContent;
 	
-							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("price-container")[0].innerHTML)[0];
+							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("price-container")[0].textContent)[0];
 		
 							fromus_img						=	document.getElementsByClassName("img-main")[0].getElementsByTagName("div")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
 						}
@@ -1772,7 +1770,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 							fromus_objectnametmp		=	/bebe.com\/[a-zA-Z\-\_0-9]{0,}\/[a-zA-Z\-\_0-9]{0,}\/(.*)\//.exec(fromus_offre)[1];									
 							fromus_objectname			=	fromus_objectnametmp.replace(/\/.*/,'').replace(/\-/g,' ');
 		
-							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("priceDisplay")[0].innerHTML)[0];
+							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("priceDisplay")[0].textContent)[0];
 	
 							fromus_img						=	document.getElementsByClassName("entity-image")[0].getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
 						}
