@@ -32,13 +32,13 @@ alert(fromus_txt);
 
 if(/id=\"/.test(fromus_txt))
 {
- var fromus_idmatch    = fromus_txt.match(/id=\("[^\"]{1,}\")/mgi);
+ var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
   alert("id"+fromus_idmatch);
   
 }
 if(/class=\"/.test(fromus_txt))
 {
-var fromus_classmatch = fromus_txt.match(/class=\("[^\"]{1,}\")/mgi);  
+var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
   alert("class"+fromus_classmatch);
   
 }
