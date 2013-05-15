@@ -33,7 +33,7 @@
 // 																																			//
 // shop 16 http://www.guess.eu ne correspond pas à from-us														//	
 // shop 29 www.nike.com : les pages de customisation produit ne sont pas traitées, car				//
-// 			elles sont en flash.																										//
+// 			elles sont en flash. 																										//
 // shop 30 inaccessible (24 avril 2013)																						//	
 // shop 32 = gap, qui est déjà fait.																							//
 // shop 36 = ralphlauren.com qui est déjà fait																			//
