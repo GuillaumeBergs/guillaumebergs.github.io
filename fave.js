@@ -275,9 +275,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 				if(document.getElementsByClassName("quickLook")[0]!=undefined)
 					{	// S'il s'agit d'une preview
-						fromus_objectname 				=	document.getElementsByClassName("quickLook")[0].getElementsByTagName("h1")[0].textContent;						
+						fromus_objectname 						=	document.getElementsByClassName("quickLook")[0].getElementsByTagName("h1")[0].textContent;						
 						
-						fromus_img		 				=	document.getElementsByClassName("thumbs")[0].getElementsByTagName("img")[0].src;						
+						fromus_img		 							=	document.getElementsByClassName("thumbs")[0].getElementsByTagName("img")[0].src;						
 						
 						if(document.getElementsByClassName("price regular largePrice")[0]!=undefined)
 							{	// Si le produit est à son prix habituel
@@ -288,27 +288,25 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 								fromus_pricemin					=	fromus_reg.exec(document.getElementsByClassName("price sale")[0].textContent)[0];
 							}
 							
-						fromus_desc						=	fromus_objectname;
+						fromus_desc									=	fromus_objectname;
 					}
 				else
 					{	// S'il s'agit d'une page produit
-						fromus_objectname 	=	document.getElementsByTagName("h1")[0].textContent;
+						fromus_objectname 						=	document.getElementsByTagName("h1")[0].textContent;
 
-						fromus_imgtmp					=	document.getElementsByClassName("viewerMain")[0].innerHTML;
-						fromus_imgtmp					= 	fromus_imgtmp+'';
-						fromus_img						= 	/(http)(.*)(\?)/gi.exec(fromus_imgtmp)[0].replace("?","");	
+						fromus_img									=	document.getElementsByClassName("viewerMain")[0].getElementsByTagName("img")[0].src;
 			
 						if(document.getElementsByClassName("price sale")[0] != undefined)
 							{	// Si le produit est en promotion
-								fromus_pricemin		=	fromus_reg.exec(document.getElementsByClassName("price sale")[0].textContent);
+								fromus_pricemin					=	fromus_reg.exec(document.getElementsByClassName("price sale")[0].textContent)[0];
 							}	
 						else
 							{	// Si le produit est à son prix habituel
-								fromus_pricemintmp		=	document.getElementsByClassName("price")[0].textContent;
-								fromus_pricemin			=	/(\$)[0-9,]{1,}(\.)[0-9]{2}/gi.exec(fromus_pricemintmp)[0];
+								fromus_pricemintmp				=	document.getElementsByClassName("price")[0].textContent;
+								fromus_pricemin					=	/(\$)[0-9,]{1,}(\.)[0-9]{2}/gi.exec(fromus_pricemintmp)[0];
 							}						
 					
-						fromus_desc      				=	document.getElementsByClassName("productShortDescription")[0].textContent;
+						fromus_desc      							=	document.getElementsByClassName("productShortDescription")[0].textContent;
 					}
 			}break;
 		
