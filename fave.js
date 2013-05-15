@@ -23,7 +23,7 @@
 // chaque produit de la gamme a une page web utilisant une structure qui lui est propre.				//
 // 																																			//
 // Walmart n'a pas le support des previews.																				//
-// 																																			//
+// 	 																																		//
 // 																																			//
 // 																																			//
 // 																																			//
