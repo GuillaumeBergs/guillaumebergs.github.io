@@ -24,6 +24,13 @@ getSelectionHTML = function () {
     return '';
   }
 };
+
+var fromus_selectedText='';
+if (window.getSelection) 
+{fromus_selectedText = window.getSelection();}
+else if (document.selection) 
+{fromus_selectedText = document.selection.createRange().text;}
+
 var fromus_txt    = getSelectionHTML();
 fromus_txt        = fromus_txt.replace(/\n/g,'');
 alert(fromus_txt);
@@ -75,4 +82,4 @@ else
   }  
 }
 alert("Et ce qui est affiché dans la case est...");
-alert(window.getSelection().textContent);
+alert(fromus_selectedtext);
