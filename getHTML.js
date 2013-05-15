@@ -32,14 +32,14 @@ alert(fromus_txt);
 
 if(/id=\"/.test(fromus_txt))
 {
- var fromus_idmatch    = fromus_txt.match(/(?:id=)(\"[^\"]{1,}\")/mgi);
-  alert("id : "+fromus_idmatch);
+ var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
+  alert(fromus_idmatch);
   
 }
 if(/class=\"/.test(fromus_txt))
 {
-var fromus_classmatch = fromus_txt.match(/(?:class=)(\"[^\"]{1,}\")/mgi);  
-  alert("class : "+fromus_classmatch);
+var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
+  alert(fromus_classmatch);
   
 }
 
@@ -49,14 +49,14 @@ if(fromus_idmatch !=undefined)
   {
      // id et class
      
- alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[1]+"<\/getprodprice>");
- alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[1]+"<\/getprodprice>");
+ alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
+ alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
      
   }
     else
   {
     //id sans class
- alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[1]+"<\/getprodprice>");
+ alert("<getprodpricetype>id<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
       
   }
 }
@@ -65,7 +65,7 @@ else
     if(fromus_classmatch !=undefined)
   {
 
- alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[1]+"<\/getprodprice>");
+ alert("<getprodpricetype>class<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
   
   }
     else
