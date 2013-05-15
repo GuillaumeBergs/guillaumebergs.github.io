@@ -32,13 +32,13 @@ alert(fromus_txt);
 
 if(/id=\"/.test(fromus_txt))
 {
- var fromus_idmatch    = fromus_txt.match(/id=\("[^\"]{1,}\")/mgi)
+ var fromus_idmatch    = fromus_txt.match(/id=\("[^\"]{1,}\")/mgi);
   alert("id"+fromus_idmatch);
   
 }
 if(/class=\"/.test(fromus_txt))
 {
-var fromus_classmatch = fromus_txt.match(/class=\("[^\"]{1,}\")/mgi)  
+var fromus_classmatch = fromus_txt.match(/class=\("[^\"]{1,}\")/mgi);  
   alert("class"+fromus_classmatch);
   
 }
@@ -49,7 +49,7 @@ if(fromus_idmatch !=undefined)
   {
      // id et class
      
- alert("<getprodpricetype>id<\/getprodpricetype>/n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>"
+ alert("<getprodpricetype>id<\/getprodpricetype>/n<getprodprice>"+fromus_idmatch[0]+"<\/getprodprice>");
      
   }
     else
