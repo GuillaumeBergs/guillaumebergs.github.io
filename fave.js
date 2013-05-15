@@ -447,6 +447,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_objectname				=	document.getElementById("pdp-title").textContent;		
 alert(fromus_objectname);
 				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent;
+alert(fromus_pricemintmp);
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemin)[0];				
 alert(fromus_pricemin);
 				fromus_img							=	document.getElementById("mainImg").src;
@@ -1871,6 +1872,9 @@ localStorage["regPrice"] = fromus_pricemin;
 
 // stockage de la description dans local storage
 localStorage["regDesc"] = fromus_desc;
+
+// stockage du visuel dans local storage
+localStorage["regVisu"] = fromus_img;
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
