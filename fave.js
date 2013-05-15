@@ -337,7 +337,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementById("productPageContent")!=undefined)
 					{	//Page
-						fromus_objectnametmp			=	document.getElementsByClassName("title")[0].getElementsByTagName("h1")[0].textContent;
+						fromus_objectname				=	document.getElementsByClassName("title")[0].getElementsByTagName("h1")[0].textContent;
 						
 						fromus_desc							=	document.getElementById("productDesc").textContent;
 					}
