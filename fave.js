@@ -59,7 +59,7 @@
 // shop 118 www.saturn.com ne permet pas l'achat et redirige vers general motors						//
 // shop 119 www.harley-davidson.com reporté																			//
 // shop 120 www.shercousa.com ne vends rien. Le plus proche est une liste de petites annonces.//
-// shop 121 www.atkmotorcyclesusa.com est en flash																//
+// shop 121 www.atkmotorcyclesusa.com est en flash 																//
 // shop 122 www.buell.com ne vend rien, mais redirige vers des tiers.											//
 // shop 123 www.indianmotorcycle.com les previews ne sont pas supportées, aucune raison 		//
 //			rationnelle apparente. Un id présent sur la page est considéré comme indéfini.				//
