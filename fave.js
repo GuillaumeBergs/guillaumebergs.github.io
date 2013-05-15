@@ -1,8 +1,8 @@
 // Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
 // Dans le cadre de son stage du 15/04/13 au 24/06/13																//
-//																				//
+//																																			//
 // Objectif du script: 	Récupérer les informations de nom, site, page, image, description 			//
-//	   							et prix de l'offre.																						//
+//								et prix de l'offre.																						//
 //																																			//
 // NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
 // dans une application, un plugin ou autre page web. 																//
@@ -23,7 +23,7 @@
 // chaque produit de la gamme a une page web utilisant une structure qui lui est propre.				//
 // 																																			//
 // Walmart n'a pas le support des previews.																				//
-// 	 																																		//
+// 																																			//
 // 																																			//
 // 																																			//
 // 																																			//
@@ -33,7 +33,7 @@
 // 																																			//
 // shop 16 http://www.guess.eu ne correspond pas à from-us														//	
 // shop 29 www.nike.com : les pages de customisation produit ne sont pas traitées, car				//
-// 			elles sont en flash. 																										//
+// 			elles sont en flash.																										//
 // shop 30 inaccessible (24 avril 2013)																						//	
 // shop 32 = gap, qui est déjà fait.																							//
 // shop 36 = ralphlauren.com qui est déjà fait																			//
@@ -59,7 +59,7 @@
 // shop 118 www.saturn.com ne permet pas l'achat et redirige vers general motors						//
 // shop 119 www.harley-davidson.com reporté																			//
 // shop 120 www.shercousa.com ne vends rien. Le plus proche est une liste de petites annonces.//
-// shop 121 www.atkmotorcyclesusa.com est en flash 																//
+// shop 121 www.atkmotorcyclesusa.com est en flash																//
 // shop 122 www.buell.com ne vend rien, mais redirige vers des tiers.											//
 // shop 123 www.indianmotorcycle.com les previews ne sont pas supportées, aucune raison 		//
 //			rationnelle apparente. Un id présent sur la page est considéré comme indéfini.				//
@@ -390,11 +390,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				if(document.getElementById("wrap")!=undefined)
 					{	//Page
-						fromus_img					=	document.getElementsById("wrap").getElementsByTagName("a")[0].href;
+						fromus_img					=	document.getElementById("wrap").getElementsByTagName("a")[0].href;
 					}
 				else
 					{	// Preview
-						fromus_img					=	document.getElementsById("productimage QuickViewproductimage").getElementsByTagName("img")[0].src;
+						fromus_img					=	document.getElementsByClassName("productimage QuickViewproductimage")[0].getElementsByTagName("img")[0].src;
 					}
 			}break;
 		
@@ -1876,7 +1876,7 @@ localStorage["regPrice"] = fromus_pricemin;
 // stockage de la description dans local storage
 localStorage["regDesc"] = fromus_desc;
 
-// stockage de la page du site dans local storage 
+// stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;	
