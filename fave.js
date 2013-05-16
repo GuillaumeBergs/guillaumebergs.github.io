@@ -1136,20 +1136,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 		case "www.bobbibrowncosmetics.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("product-info")[0].textContent;
-				if(/\S/.test(/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2]))
-					{	// Si le nom est en première ligne...
-						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2];
-						if( (fromus_objectname.replace(/\s/g,'')) == 'New' )|| (fromus_objectname.replace(/\s/g,'') == 'LimitedEdition') || (fromus_objectname.replace(/\s/g,'') == 'AwardWinning'))
-							{	// ...Mais qu'en fait, ce n'est pas le nom
-								fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
-							}
-					}
-				else
-					{	// Si le nom est en seconde ligne
-						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
-					}
-					
+				fromus_objectname				=	document.getElementsByClassName("product-info")[0].getElementsByTagName('h1')[0].textContent;
+
 				if(document.getElementsByClassName("product-info")[0]!=undefined)
 					{
 						fromus_desc					=	document.getElementsByClassName("product-info")[0].textContent;
