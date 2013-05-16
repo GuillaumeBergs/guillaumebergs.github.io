@@ -767,8 +767,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 		case "www.ruelala.com":
 			{
-				fromus_objectnametmp			=	document.getElementById("productAttributes").innerHTML;
-				fromus_objectname				=	/(?:\<h2)(.*)(?:\<\/h2\>)/g.exec(fromus_objectnametmp.replace(/\s/g,''))[1].replace(/<h2>/,'').replace(/(.*)>/,'').replace(/([a-z])([A-Z])/g, '$1 $2');
+				fromus_objectnametmp			=	document.getElementById("productAttributes").getElementsByTagName("h2").textContent;
 				
 				fromus_pricemin					=	document.getElementById("salePrice").textContent;		
 		
