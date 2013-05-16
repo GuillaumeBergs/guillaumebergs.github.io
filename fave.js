@@ -967,7 +967,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}		
 				if(document.getElementsByClassName("desc")[0]!=undefined)
 					{
-						fromus_desc					=	fromus_reg.exec(document.getElementById("quickview").getElementsByTagName("div")[1].getElementsByTagName("div")[0].textContent;
+						fromus_desc					=	document.getElementById("quickview").getElementsByTagName("div")[1].getElementsByTagName("div")[0].textContent;
 					}
 				if(document.getElementById("item-description")!=undefined)
 					{
