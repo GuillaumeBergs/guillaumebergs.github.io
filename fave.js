@@ -653,8 +653,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{
 						fromus_desc				=	document.getElementById("productDetails").textContent;
 					}
+				if(document.getElementById("qvDescription")!=undefined)
+					{
+						fromus_desc				=	document.getElementById("qvDescription").textContent;
+					}
 			}break;
-
+			
+			
 		case "www.nike.com":
 			{
 				fromus_objectnametmp			=	document.getElementsByClassName("product-title");
