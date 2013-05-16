@@ -1202,7 +1202,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(document.getElementsByClassName("spp-left-col")[0]!=undefined)
 					{	// Fiche
 						fromus_objectnametmp			=	document.getElementsByClassName("spp-left-col")[0].textContent;
-						fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+						fromus_objectname				=	/(.*)[\n]{0,1}/.exec(fromus_objectnametmp)[0];
 					}
 				else
 					{	// Preview
@@ -1806,7 +1806,7 @@ localStorage["regPrice"] = fromus_pricemin;
 // stockage de la description dans local storage
 localStorage["regDesc"] = fromus_desc;
 
-// stockage du visuel dans local storage 
+// stockage du visuel dans local storage
 localStorage["regImg"] = fromus_img;
 
 // stockage de la page du site dans local storage
