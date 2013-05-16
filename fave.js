@@ -1173,10 +1173,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				= 	document.getElementById("price").textContent;
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];		
 
-						fromus_imgtmp					=	document.getElementById("product-image").innerHTML;
-						fromus_imgtmp					=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
-						fromus_imgtmp					=	/\"(http.*(\.jpg|\.png|\.gif))$/i.exec(fromus_imgtmp)[0];
-						fromus_img						=	fromus_imgtmp.substring(1,fromus_imgtmp.length);
+						fromus_img						=	document.getElementById("product-image").getElementsByTagName("div")[0].getElementsByTagName("div")[1].getElementsByTagName("img")[0].src
 					}
 				else
 					{	// Preview
