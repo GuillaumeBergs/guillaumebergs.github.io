@@ -1305,8 +1305,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						if(document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0]!=undefined)
 							{	
-								fromus_imgtmp					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].getElementsByTagName('figure')[0].getElementsByTagName('img')[0].src;
-								fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+								fromus_img					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].getElementsByTagName('figure')[0].getElementsByTagName('img')[0].src;
 							}
 					}
 			
