@@ -1806,7 +1806,7 @@ localStorage["regPrice"] = fromus_pricemin;
 // stockage de la description dans local storage
 localStorage["regDesc"] = fromus_desc;
 
-// stockage du visuel dans local storage
+// stockage du visuel dans local storage 
 localStorage["regImg"] = fromus_img;
 
 // stockage de la page du site dans local storage
