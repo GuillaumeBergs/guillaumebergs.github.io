@@ -532,7 +532,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 		case "www.landsend.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("pp-product-name")[0].textContent;
+				fromus_objectname			=	document.getElementsByClassName("pp-product-name")[0].textContent;
 
 				fromus_pricemintmp				=	document.getElementsByClassName("pp-summary-price")[0].textContent;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
