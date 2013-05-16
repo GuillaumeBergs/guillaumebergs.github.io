@@ -1050,7 +1050,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_pricemin					=	document.getElementsByClassName("price js_toPrice")[0].textContent.replace(/([0-9]{1,})([0-9]{2})/g, '$1\.$2');
 
-				fromus_img							=	document.getElementById("imgHolder").getElementsBytagName("img")[0].src;
+				fromus_img							=	document.getElementById("imgHolder").getElementsByTagName("img")[0].src;
 				
 				if(document.getElementsByClassName("addlEquity")[0]!=undefined)
 					{
