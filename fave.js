@@ -1222,7 +1222,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 		case "milanicosmetics.com":
 			{
-				fromus_objectnametmp			=	document.getElementById("product-meta").getElementsByTagName("h1")[0].textContent;
+				fromus_objectname				=	document.getElementById("product-meta").getElementsByTagName("h1")[0].textContent;
 				
 				fromus_pricemin					=	document.getElementsByClassName("product-price")[0].textContent;
 
