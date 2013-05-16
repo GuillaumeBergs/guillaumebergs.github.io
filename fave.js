@@ -1182,15 +1182,14 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{	// Preview
 						fromus_objectname				=	document.getElementsByClassName("product-meta")[0].getElementsByTagName("h2")[0].textContent;
 
-						fromus_pricemintmp				= 	document.getElementsByClassName("variantprice")[0].textContent;
+						fromus_pricemintmp				= 	document.getElementsByClassName("product-meta")[0].getElementsByTagName("p")[0].textContent;
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-						fromus_imgtmp					=	document.getElementsByClassName("product-img")[0].innerHTML;
-						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];							
+						fromus_img							=	document.getElementsByClassName("product-img")[0].getElementsByTagName("img")[0].src;						
 					}
 				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
-						fromus_desc					=	document.getElementsByClassName("description")[0].textContent;
+						fromus_desc					=	document.getElementsByClassName("product-meta")[0].getElementsByTagName("p")[1].textContent;
 					}
 				if(document.getElementById("description-content")!=undefined)
 					{
