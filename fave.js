@@ -961,6 +961,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp	=	document.getElementById("item-info").innerHTML;
 						fromus_objectname		=	/\<h1 itemprop=\"name\"\>(.*)\<\/h1\>/.exec(fromus_objectnametmp)[1];
 						
+						fromus_img					=	document.getElementById("zoom1").getElementsByTagName("img")[0].src;
+						
 						fromus_pricemin			=	document.getElementsByClassName("current-price")[0].textContent;	
 					}		
 				if(document.getElementsByClassName("desc")[0]!=undefined)
