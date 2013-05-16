@@ -995,7 +995,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				if(document.getElementsByClassName("product-content")[0]!=undefined)
 					{
-						fromus_desc					=	document.getElementsByClassName("product-content")[0].textContent;
+						fromus_desc					=	document.getElementsByClassName("product-content")[0].textContent.replace(/\n/g,'');
 					}				
 				
 			}break;
