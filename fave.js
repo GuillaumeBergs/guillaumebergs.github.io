@@ -1082,8 +1082,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else
 					{
-						fromus_objectnametmp	=	document.getElementById("productsummary").textContent;
-						fromus_objectname		=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+						fromus_objectnametmp	=	document.getElementById("productsummary").getElementsByClassName("h1")[0].textContent;
 					}
 
 				if(document.getElementById("saleprice")!=undefined)
