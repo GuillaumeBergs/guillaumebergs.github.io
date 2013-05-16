@@ -714,8 +714,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 		case "www.ralphlauren.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("prodtitleLG");
-				fromus_objectname				=	fromus_objectnametmp[0].textContent.replace(/\n(.*)/g,"");				
+				fromus_objectname			=	document.getElementsById("title2Banner").getElementsByTagName("img")[0].alt;			
 
 				fromus_pricemintmp				=	document.getElementsByClassName("ProductPriceContainer")[0].textContent;
 				fromus_pricemintmp				=	fromus_pricemintmp.replace(/\s/g,'');
