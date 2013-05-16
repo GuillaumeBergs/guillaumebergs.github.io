@@ -27,7 +27,7 @@
 // 																																			//
 // 																																			//
 // 																																			//
-// 	  																																		//
+// 																																			//
 // shop 11 http://www.ebay.com reporté.																					//
 // shop 13 endless a été racheté par amazon																			//
 // 																																			//
@@ -767,7 +767,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 		case "www.ruelala.com":
 			{
-				fromus_objectname				=	document.getElementById("productAttributes").getElementsByTagName("h2").textContent;
+				fromus_objectname				=	document.getElementById("productAttributes").getElementsByTagName("h2")[0].textContent;
 				
 				fromus_pricemin					=	document.getElementById("salePrice").textContent;		
 		
