@@ -1098,19 +1098,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				if(document.getElementById("postcard-thumbnail")!=undefined)
 					{
-						fromus_imgtmp			=	document.getElementById("postcard-thumbnail").innerHTML.replace(/\s/gi,'');
+						fromus_img					=	document.getElementById("postcard-thumbnail").getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
 					}
 				else
 					{
-						fromus_imgtmp			=	document.getElementById("imagepreview").innerHTML.replace(/\s/gi,'');
+						fromus_img					=	document.getElementById("imagepreview").getElementsByTagName("img")[0].src;
 					}
-				fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
-		
-				if(/;/.test(fromus_img))	// Certaines src n'ont pas d'extension, elles sont coupées au ; et cette vérification tronque
-					{						// ce qui dépasse
-						fromus_img				=	fromus_img.replace(/;.*/g,'');
-					}
-					
+
 				if(document.getElementById("tabbed-bundle-overview")!=undefined)
 					{
 						fromus_desc					=	document.getElementById("tabbed-bundle-overview").textContent;
