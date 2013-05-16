@@ -496,7 +496,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(/(\/catalog\/)/.test(fromus_offre))		//S'il s'agit d'une preview
 					{
-						fromus_objectnametmp			=	document.getElementsByClassName("overlay_right")[0].textContent;
+						fromus_objectname			=	document.getElementsByClassName("overlay_right")[0].textContent;
 						
 						fromus_img						=	document.getElementsByClassName("quickViewProductImage")[0].getElementsByTagName("a")[0].href;			
 					}	
