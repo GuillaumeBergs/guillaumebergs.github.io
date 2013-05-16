@@ -524,9 +524,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];	
 
-			if(document.getElementsByClassName("prod_description")[0]!=undefined)
+			if(document.getElementById("maincopy")!=undefined)
 				{
-					fromus_desc						=	document.getElementsByClassName("prod_description")[0].textContent;
+					fromus_desc						=	document.getElementById("maincopy")[0].textContent;
 				}
 			}break;			
 			
