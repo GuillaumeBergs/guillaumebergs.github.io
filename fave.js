@@ -991,8 +991,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].textContent;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_imgtmp					=	document.getElementsByClassName("boom-three-column product-image vat")[0].innerHTML;
-				fromus_img						=	/\<img src=\"(.*\.jpg)/.exec(fromus_imgtmp)[1];
+				fromus_img							=	document.getElementsByClassName("photo")[0].src;
 
 				if(document.getElementsByClassName("product-content")[0]!=undefined)
 					{
