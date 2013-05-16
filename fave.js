@@ -1226,7 +1226,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				fromus_pricemin					=	document.getElementsByClassName("product-price")[0].textContent;
 
-				fromus_imgtmp					=	document.getElementById("product-image-large").getElementsByTagName("img")[0].src;
+				fromus_img							=	document.getElementById("product-image-large").getElementsByTagName("img")[0].src;
 				
 				if(document.getElementById("product-meta")!=undefined)
 					{
@@ -1804,7 +1804,7 @@ localStorage["regDesc"] = fromus_desc;
 // stockage du visuel dans local storage
 localStorage["regImg"] = fromus_img;
 
-// stockage de la page du site dans local storage 
+// stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;	
