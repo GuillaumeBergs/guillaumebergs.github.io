@@ -26,7 +26,7 @@
 // 																																			//
 // 																																			//
 // 																																			//
-// 		 																																	//
+// 																																			//
 // 																																			//
 // shop 11 http://www.ebay.com reporté.																					//
 // shop 13 endless a été racheté par amazon																			//
@@ -691,8 +691,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else	//S'il s'agit d'une fiche
 					{
-						fromus_objectnametmp			=	document.getElementById("prod_mainCenter").innerHTML.replace(/\s/g,'');
-						fromus_objectname				=	/(?:\<h1\>)(.*)(?:\<\/h1\>)/.exec(fromus_objectnametmp)[1].replace(/<h1>/,'').replace(/([a-z])([A-Z])/g, '$1 $2');
+						fromus_objectname			=	document.getElementById("prod_mainCenter").getElementsByTagName("div")[0].getElementsByTagName("div")[0].textContent;
 									
 						if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
 							{
