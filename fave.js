@@ -691,7 +691,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else	//S'il s'agit d'une fiche
 					{
-						fromus_objectname			=	document.getElementById("prod_mainCenter").getElementsByTagName("div")[0].getElementsByTagName("div")[0].textContent;
+						fromus_objectname			=	document.getElementById("prod_mainCenter").getElementsByTagName("div")[0].getElementsByTagName("div")[0].textContent.;
 									
 						if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
 							{
@@ -1848,7 +1848,7 @@ if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefine
 			{
 					fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
 			}
-			fromus_objectname						=	fromus_objectname.substring(0,100);
+			fromus_objectname						=	fromus_objectname.replace(/\n/g,'').substring(0,100);
 			fromus_pricemin							=	fromus_pricemin.replace(/\$/g,'');
 			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin.replace(',',''))[0]);
 	
