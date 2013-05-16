@@ -949,9 +949,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{			
 				if(document.getElementById("quickview")!=undefined)
 					{	// Si c'est une preview
-						fromus_objectname		=	document.getElementById("quickview").getElementsbyTagName("p")[0].textContent;
+						fromus_objectname		=	document.getElementById("quickview").getElementsByTagName("p")[0].textContent;
 						
-						fromus_pricemin			=	fromus_reg.exec(document.getElementById("quickview").getElementsbyTagName("div")[1].textContent.replace(/s/g,''));
+						fromus_pricemin			=	fromus_reg.exec(document.getElementById("quickview").getElementsByTagName("div")[1].textContent.replace(/s/g,''));
 						
 						fromus_img					=	document.getElementById("quickview").getElementsByTagName("div")[0].getElementsbyTagName("img")[0].src;
 			
