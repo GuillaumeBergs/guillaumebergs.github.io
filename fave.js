@@ -532,12 +532,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 		case "www.landsend.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("pp-product-name");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
+				fromus_objectnametmp			=	document.getElementsByClassName("pp-product-name")[0].textContent;
 
-				fromus_pricemintmp				=	document.getElementsByClassName("pp-summary-price");
-				fromus_pricemin					=	fromus_pricemintmp[0].textContent + '';	
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
+				fromus_pricemintmp				=	document.getElementsByClassName("pp-summary-price")[0].textContent;
+				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
 				fromus_img						=	document.getElementById("backImageSjElement5_img").src;
 				fromus_img						=	fromus_img.replace(/(\?.*)/,'');
