@@ -1771,7 +1771,7 @@ if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefine
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
 
-// stockage du prix dans local storage
+// stockage du prix dans local storage 
 localStorage["regPrice"] = fromus_pricemin;
 
 // stockage de la description dans local storage
