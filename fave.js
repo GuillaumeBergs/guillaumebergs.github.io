@@ -1201,8 +1201,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementsByClassName("spp-left-col")[0]!=undefined)
 					{	// Fiche
-						fromus_objectnametmp			=	document.getElementsByClassName("spp-left-col")[0].textContent;
-						fromus_objectname				=	/(.*)[\n]{0,1}/.exec(fromus_objectnametmp)[0];
+						fromus_objectname				=	document.getElementsByClassName("spp-left-col")[0].getElementsByTagName("h1")[0].textContent;
 					}
 				else
 					{	// Preview
@@ -1223,13 +1222,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 		case "milanicosmetics.com":
 			{
-				fromus_objectnametmp			=	document.getElementById("product-meta").textContent;
-				fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+				fromus_objectnametmp			=	document.getElementById("product-meta").getElementsByTagName("h1")[0].textContent;
 				
 				fromus_pricemin					=	document.getElementsByClassName("product-price")[0].textContent;
 
-				fromus_imgtmp					=	document.getElementById("product-image-large").innerHTML;
-				fromus_img						=	'http://www.smashbox.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				fromus_imgtmp					=	document.getElementById("product-image-large").getElementsByTagName("img")[0].src;
 				
 				if(document.getElementById("product-meta")!=undefined)
 					{
