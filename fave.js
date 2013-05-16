@@ -1238,18 +1238,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementById("vsImage")!=undefined)
 					{ 	// Fiche
-						fromus_objectnametmp			=	document.getElementsByClassName("short x-large cufon-replaced")[0].innerHTML.replace(/[^A-Za-z\s]/g,'');								
-						fromus_objectnametmp			=	fromus_objectnametmp.replace(/cufon/g,' ').replace(/class/g,' ').replace(/canvas/g,' ').replace(/ alt/g,' ').replace(/style/g,' ').replace(/width/g,' ').replace(/px/g,' ').replace(/height/g,' ').replace(/text/g,' ').replace(/left/g,' ').replace(/top/g,' ');			
-						fromus_objectname				=	/[\s]{1,}(.*)/.exec(fromus_objectnametmp.replace(/[A-Z]{1,}/,' '))[1];							
-						fromus_objectname 				=	fromus_objectname.replace(/\s/g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.');								
-						fromus_objectname 				=	fromus_objectname.replace(/\./g,' ');								
-						fromus_objectname 				=	fromus_objectname.split(' ');							
-						fromus_objectnametmp			=	fromus_objectname[1]+' '+fromus_objectname[3]+' '+fromus_objectname[5]+' '+fromus_objectname[7]+' '+fromus_objectname[9];							
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[11]+' '+fromus_objectname[13]+' '+fromus_objectname[15]+' '+fromus_objectname[17];		
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[19]+' '+fromus_objectname[21]+' '+fromus_objectname[23]+' '+fromus_objectname[25];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[27]+' '+fromus_objectname[29]+' '+fromus_objectname[31]+' '+fromus_objectname[33];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[35]+' '+fromus_objectname[37]+' '+fromus_objectname[39]+' '+fromus_objectname[41];
-						fromus_objectname				=	fromus_objectnametmp.replace(/ undefined/g,'');
+						fromus_objectname				=	document.getElementsByClassName("short x-large cufon-replaced")[0].textContent;								
 
 						fromus_img					=	document.getElementById("vsImage").src;		
 					}
