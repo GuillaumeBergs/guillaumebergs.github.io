@@ -647,9 +647,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].textContent.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_imgtmp					=	document.getElementsByClassName("main-img")[0].innerHTML;
-				fromus_imgtmp					+=	'';				
-				fromus_img						= 	(/\"(http\:\/\/.*)(\.jpg|\.jpeg|\.tif|\.bmp|\.png|\.gif)\" /gi.exec(fromus_imgtmp)[0] + '').replace(/alt.*/,'').replace("\"","").replace("\"","");
+				fromus_img					=	document.getElementsByClassName("zoom-available")[0].src;
 
 				if(document.getElementById("productDetails")!=undefined)
 					{
