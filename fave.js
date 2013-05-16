@@ -767,7 +767,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 		case "www.ruelala.com":
 			{
-				fromus_objectnametmp			=	document.getElementById("productAttributes").getElementsByTagName("h2").textContent;
+				fromus_objectname				=	document.getElementById("productAttributes").getElementsByTagName("h2").textContent;
 				
 				fromus_pricemin					=	document.getElementById("salePrice").textContent;		
 		
