@@ -1804,7 +1804,7 @@ localStorage["regDesc"] = fromus_desc;
 // stockage du visuel dans local storage
 localStorage["regImg"] = fromus_img;
 
-// stockage de la page du site dans local storage
+// stockage de la page du site dans local storage 
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;	
