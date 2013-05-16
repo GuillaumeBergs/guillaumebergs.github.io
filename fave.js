@@ -720,13 +720,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	fromus_pricemintmp.replace(/\s/g,'');
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];				
 				
-				fromus_imgtmp					=	document.getElementsByClassName("s7flyoutFlyoutView")[0].innerHTML;
-				fromus_imgtmp					= 	fromus_imgtmp+'';
-				fromus_img						= 	/(http.*\?)/gi.exec(fromus_imgtmp)[0].replace("?","");	
-			
-				if(document.getElementById('longDescDiv')!=undefined)
+				fromus_img					=	document.getElementsByClassName("s7flyoutFlyoutView")[0].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
+
+				if(document.getElementById('padDescDiv')!=undefined)
 					{
-						fromus_desc						=	document.getElementById('longDescDiv').textContent;	
+						fromus_desc						=	document.getElementById('padDescDiv').textContent;	
 					}					
 			}break;
 
