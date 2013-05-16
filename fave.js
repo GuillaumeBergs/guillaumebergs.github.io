@@ -954,12 +954,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemin			=	fromus_reg.exec(document.getElementById("quickview").getElementsByTagName("div")[1].textContent.replace(/s/g,''))[0];
 						
 						fromus_img					=	document.getElementById("quickview").getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
-			
 					}
 				else
 					{	// Si c'est une fiche
-						fromus_objectnametmp	=	document.getElementById("item-info").innerHTML;
-						fromus_objectname		=	/\<h1 itemprop=\"name\"\>(.*)\<\/h1\>/.exec(fromus_objectnametmp)[1];
+						fromus_objectname		=	document.getElementById("item-info").getElementsByTagName("h1")[0].textContent;
 						
 						fromus_img					=	document.getElementById("zoom1").getElementsByTagName("img")[0].src;
 						
