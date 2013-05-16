@@ -1134,26 +1134,6 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}				
 			}break;
 
-		case "www.toofaced.com":
-			{
-				fromus_objectname				=	document.getElementsByClassName("productName")[0].textContent;
-
-				fromus_pricemintmp				=	document.getElementsByClassName("variantprice")[0].textContent;
-				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
-
-				fromus_imgtmp					=	document.getElementsByClassName("mainImage")[0].innerHTML.replace(/\s/gi,'');
-				fromus_img						=	"https://www.toofaced.com"+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
-				
-				if(document.getElementsByClassName("productSummary")[0]!=undefined)
-					{
-						fromus_desc					=	document.getElementsByClassName("productSummary")[0].textContent;
-					}
-				if(document.getElementById("tab-details")!=undefined)
-					{
-						fromus_desc					=	document.getElementById("tab-details").textContent;
-					}
-			}break;
-
 		case "www.bobbibrowncosmetics.com":
 			{
 				fromus_objectnametmp			=	document.getElementsByClassName("product-info")[0].textContent;
@@ -1174,14 +1154,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{
 						fromus_desc					=	document.getElementsByClassName("product-info")[0].textContent;
 					}
-					
 
-				
 				fromus_pricemintmp				=	document.getElementsByClassName("purchase-row")[0].textContent;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_imgtmp					=	document.getElementsByClassName("img-holder")[0].innerHTML.replace(/\s/gi,'');
-				fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				fromus_img							=	document.getElementsByClassName("img-holder")[0].getElementsByTagName("img")[0].src;
 			}break;
 
 		case "tartecosmetics.com":
