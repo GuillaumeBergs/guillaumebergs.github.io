@@ -1244,7 +1244,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else
 					{	// Preview
-						fromus_objectnametmp			=	document.getElementsByClassName("small short cufon-replaced")[0].textContent;							
+						fromus_objectname			=	document.getElementsByClassName("small short cufon-replaced")[0].textContent;							
 
 						fromus_imgtmp					=	document.getElementsByClassName("col-a view")[0].innerHTML;	
 						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
