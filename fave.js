@@ -505,10 +505,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp			=	document.getElementsByClassName("title");
 						fromus_objectname				=	fromus_objectnametmp[0].textContent.replace("\n","");			
 
-						fromus_imgtmp					=	document.getElementsByClassName("image_container")[0].innerHTML;
-						fromus_imgtmp					+=	'';
-						fromus_imgtmp					= 	/(http)(.*)(\?)/gi.exec(fromus_imgtmp)[0];		
-						fromus_img						=	fromus_imgtmp.replace(/(&quot)(.*)/,"");							
+						fromus_img							=	document.getElementsByClassName("feature")[0].src;						
 					}
 				
 				// Partie commune aux previews et pages dédiées
@@ -523,8 +520,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				if(fromus_pricemintmp=='')
 					{	
-						fromus_pricemintmp					=	document.getElementsByClassName("original");
-						fromus_pricemintmp					=	fromus_pricemintmp[0].innerHTML;
+						fromus_pricemintmp					=	document.getElementsByClassName("original")[0].textContent;
 					}	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];	
 
