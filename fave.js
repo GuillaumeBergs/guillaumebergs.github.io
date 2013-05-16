@@ -691,7 +691,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else	//S'il s'agit d'une fiche
 					{
-						fromus_objectname			=	document.getElementById("prod_mainCenter").getElementsByTagName("div")[0].getElementsByTagName("div")[0].textContent.;
+						fromus_objectname			=	document.getElementById("prod_mainCenter").getElementsByTagName("div")[0].getElementsByTagName("div")[0].textContent;
 									
 						if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
 							{
