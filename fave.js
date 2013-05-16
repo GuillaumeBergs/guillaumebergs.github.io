@@ -695,9 +695,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 									
 						if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
 							{
-								fromus_imgtmp					=	document.getElementById("proImageHero").innerHTML.replace(/\s/g,'');
-								fromus_imgtmp					= 	fromus_imgtmp+'';
-								fromus_img						= 	/(http.*)(\.jpg|\.jpeg|\.png|\.bmp|\.tif|\.gif)/gi.exec(fromus_imgtmp)[0];
+								fromus_img				=	document.getElementsByClassName("proImageCenter")[0].src;
 							}
 						else	// Si l'image n'est pas zoomable
 							{
@@ -705,9 +703,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 							}
 					}	//Le prix est commun aux deux 		
 				
-					fromus_pricemintmp				=	document.getElementsByClassName("Ovalue main-price-red")[0];
-					fromus_pricemin					=	fromus_pricemintmp.textContent + '';	
-					fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];		
+					fromus_pricemintmp				=	document.getElementsByClassName("Ovalue main-price-red")[0].textContent;
+					fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];		
 
 				if(document.getElementById('details_descFull')!=undefined)
 					{
