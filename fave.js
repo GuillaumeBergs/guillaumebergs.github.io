@@ -4,7 +4,7 @@
 // Objectif du script: 	Récupérer les informations de nom, site, page, image, description 			//
 //								et prix de l'offre.																						//
 //																																			//
-// NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que 								//
+// NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
 // dans une application, un plugin ou autre page web. 																//
 //	(Le code n'étant pas compressé et riche en espaces et commentaires, il est fortement 			//
 //	déconseillé de l'utiliser en l'état pour autre chose que du debbuging.)										//																							//
@@ -1335,7 +1335,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				=	document.getElementsByClassName('mds-cmp-content19 mod modVi_2 section vi_2')[0].textContent;
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
-						fromus_imgtmp					=	document.getElementsByClassName("color-slides")[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[0].style;
+						fromus_imgtmp					=	document.getElementsByClassName("color-slides")[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[0].getElementsByTagName('img')[0].src;
 						fromus_img						=	'http://www.cadillac.com'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png))\"\>/.exec(fromus_imgtmp)[1];
 						
 				if(document.getElementsByClassName("fck_authorsinput tx")[0]!=undefined)
@@ -1771,7 +1771,7 @@ if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefine
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
 
-// stockage du prix dans local storage 
+// stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;
 
 // stockage de la description dans local storage
