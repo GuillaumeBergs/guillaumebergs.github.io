@@ -1212,8 +1212,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					
 				fromus_pricemin					=	document.getElementById("price-span").textContent;
 
-				fromus_imgtmp					=	document.getElementsByClassName("spp_image")[0].innerHTML;
-				fromus_img						=	'http://www.smashbox.com'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				fromus_imgtmp					=	document.getElementsByClassName("spp_image")[0].getElementsByTagName("img")[0].src;
 
 				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
