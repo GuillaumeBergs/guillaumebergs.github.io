@@ -1180,7 +1180,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else
 					{	// Preview
-						fromus_objectname				=	document.getElementsByClassName("product-meta")[0].getElementsByTagName("h1")[0].textContent;
+						fromus_objectname				=	document.getElementsByClassName("product-meta")[0].getElementsByTagName("h2")[0].textContent;
 
 						fromus_pricemintmp				= 	document.getElementsByClassName("variantprice")[0].textContent;
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
