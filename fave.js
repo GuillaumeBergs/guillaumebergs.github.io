@@ -496,7 +496,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(/(\/catalog\/)/.test(fromus_offre))		//S'il s'agit d'une preview
 					{
-						fromus_objectname			=	document.getElementsByClassName("overlay_right")[0].textContent;
+						fromus_objectname			=	document.getElementsByClassName("overlay_right")[0].getElementsByTagName("h2")[0].textContent;
 						
 						fromus_img						=	document.getElementsByClassName("quickViewProductImage")[0].getElementsByTagName("a")[0].href;			
 					}	
@@ -513,10 +513,6 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				// Partie commune aux previews et pages dédiées
 				
-				if(/(.*)(?:sale \$|now \$|original \$)/.test(fromus_objectname))	// Si le "nom" contient plus que le nom, tronquer l'excédent
-					{
-						fromus_objectname						=	/(.*)(?:sale \$|now \$|original \$)/.exec(fromus_objectname)[1];
-					}
 			
 			// Ce site utilise deux noeuds, l'un pour les prix normaux et/ou originaux et l'autre pour les offres spéciales, "sales"
 			// quelle que soit l'état de l'offre, les deux sont présents sur la page. Le code ci-dessous va donc en premier voir si
@@ -1868,7 +1864,7 @@ localStorage["regPrice"] = fromus_pricemin;
 localStorage["regDesc"] = fromus_desc;
 
 // stockage du visuel dans local storage
-localStorage["regVisu"] = fromus_img;
+localStorage["regImg"] = fromus_img;
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
