@@ -1140,7 +1140,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(/\S/.test(/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2]))
 					{	// Si le nom est en première ligne...
 						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2];
-						if( (fromus_objectname == 'New' )|| (fromus_objectname == 'Limited Edition') )
+						if( (fromus_objectname == 'New' )|| (fromus_objectname == 'Limited Edition') || (fromus_objectname == 'Award Winning'))
 							{	// ...Mais qu'en fait, ce n'est pas le nom
 								fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
 							}
