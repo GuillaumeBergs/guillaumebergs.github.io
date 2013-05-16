@@ -4,7 +4,7 @@
 // Objectif du script: 	Récupérer les informations de nom, site, page, image, description 			//
 //								et prix de l'offre.																						//
 //																																			//
-// NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
+// NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que 								//
 // dans une application, un plugin ou autre page web. 																//
 //	(Le code n'étant pas compressé et riche en espaces et commentaires, il est fortement 			//
 //	déconseillé de l'utiliser en l'état pour autre chose que du debbuging.)										//																							//
