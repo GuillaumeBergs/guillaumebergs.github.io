@@ -1335,7 +1335,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				=	document.getElementsByClassName('mds-cmp-content19 mod modVi_2 section vi_2')[0].textContent;
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
-						fromus_imgtmp					=	document.getElementsByClassName("color-slides")[0].innerHTML;
+						fromus_imgtmp					=	document.getElementsByClassName("color-slides")[0]..getElementsByTagName('ul')[0].getElementsByTagName('li')[0].style;
 						fromus_img						=	'http://www.cadillac.com'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png))\"\>/.exec(fromus_imgtmp)[1];
 						
 				if(document.getElementsByClassName("fck_authorsinput tx")[0]!=undefined)
