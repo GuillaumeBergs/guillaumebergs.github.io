@@ -1246,8 +1246,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{	// Preview
 						fromus_objectname			=	document.getElementsByClassName("small short cufon-replaced")[0].textContent;							
 
-						fromus_imgtmp					=	document.getElementsByClassName("col-a view")[0].innerHTML;	
-						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+						fromus_img						=	document.getElementsByClassName("col-a view")[0].getElementsByTagName("img")[0].src;
 					}			
 						fromus_pricemintmp				= 	document.getElementsByClassName("pricing")[0].textContent;
 						fromus_pricemin					=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/.exec(fromus_pricemintmp)[0];	
