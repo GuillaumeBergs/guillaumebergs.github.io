@@ -953,8 +953,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						
 						fromus_pricemin			=	document.getElementsByClassName("ourprice")[0].textContent;
 						
-						fromus_imgtmp			=	document.getElementById("quickview").innerHTML;
-						fromus_img				=	/src=\"(.*)\"/gi.exec(fromus_imgtmp)[1];				
+						fromus_img					=	document.getElementById("quickview").getElementsbyTagName("div")[0].getElementsbyTagName("img")[0].src;
+			
 					}
 				else
 					{	// Si c'est une fiche
