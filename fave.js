@@ -662,21 +662,23 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 		case "www.nike.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("product-title");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;			
+				fromus_objectname				=	document.getElementsByClassName("product-title")[0].textContent;	
 			
-				fromus_pricemintmp				=	document.getElementsByClassName("local")[0];
-				fromus_pricemin					=	fromus_pricemintmp.textContent + '';	
-				fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];				
+				fromus_pricemintmp				=	document.getElementsByClassName("local")[0].textContent;
+				fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemintmp)[0];				
 
-				fromus_imgtmp					=	document.getElementsByClassName("product-image-wrap")[0].innerHTML;
-				fromus_imgtmp					= 	fromus_imgtmp+'';
-				fromus_img						= 	/(http.*)(\.jpg|\.jpeg|\.png|\.bmp|\.tif|\.gif)/gi.exec(fromus_imgtmp)[0].replace("?","");	
+				fromus_img						=	document.getElementsByClassName("primary-product-image")[0].src;
 
 				if(document.getElementById('pi-main-headline')!=undefined)
 					{
 						fromus_desc						=	document.getElementById('pi-main-headline').textContent;	
 					}
+				if(document.getElementsByClassName("pi-sub-title")[0]!=undefined)
+				{
+					fromus_desc				=	document.getElementsByClassName("pi-sub-title")[0].textContent;
+				}				
+					
+					
 			}break;
 			
 		case "www.overstock.com":
