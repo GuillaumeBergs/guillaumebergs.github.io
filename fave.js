@@ -526,7 +526,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 			if(document.getElementById("maincopy")!=undefined)
 				{
-					fromus_desc						=	document.getElementById("maincopy")[0].textContent;
+					fromus_desc						=	document.getElementById("maincopy").textContent;
 				}
 			}break;			
 			
