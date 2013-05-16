@@ -649,9 +649,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_img					=	document.getElementsByClassName("zoom-available")[0].src;
 
-				if(document.getElementById("productDetails")!=undefined)
+				if(document.getElementsByClassName("productCutline")[0]!=undefined)
 					{
-						fromus_desc				=	document.getElementById("productDetails").textContent;
+						fromus_desc				=	document.getElementsByClassName("productCutline")[0].textContent;
 					}
 				if(document.getElementById("qvDescription")!=undefined)
 					{
