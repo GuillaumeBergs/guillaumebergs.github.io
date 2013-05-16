@@ -1207,7 +1207,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				else
 					{	// Preview
 						fromus_objectnametmp			=	document.getElementsByClassName("description-container")[0].textContent;
-						fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+						fromus_objectname				=	/(.*)[\n]{0,1}/.exec(fromus_objectnametmp)[0];
 					}
 					
 				fromus_pricemin					=	document.getElementById("price-span").textContent;
