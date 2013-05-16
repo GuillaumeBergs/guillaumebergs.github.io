@@ -695,7 +695,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 									
 						if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
 							{
-								fromus_img				=	document.getElementsByClassName("proImageCenter")[0].src;
+								fromus_img				=	document.getElementsByClassName("proImageCenter")[0].getElementsByTagName("img")[0].src;
 							}
 						else	// Si l'image n'est pas zoomable
 							{
