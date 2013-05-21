@@ -1,4 +1,4 @@
-// Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)  	//
+// Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
 // Dans le cadre de son stage du 15/04/13 au 24/06/13																				//
 //																																												//
 // Objectif du script: 	Récupérer les informations de nom, site, page, image, description 				//
@@ -19,6 +19,7 @@ fromus_img,
 fromus_desc,
 fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;
+var fromus_sitelist = new Array();
 
 function fromus_site() 
 {
