@@ -1,4 +1,4 @@
-var c=1;
+var c,t=1;
 var b= [''];
 var bindEvent = function(elem ,evt,cb) {
   //vérifie si addEventListenerexiste dans l'élément
@@ -35,6 +35,7 @@ bindEvent(document,'click', function(event)
 { var target = event.target || event.srcElement;
 	alert ( target.innerHTML );
 		this.removeEventListener('mouseOut',arguments.callee,false);
+					t = target;
 					t.style.backgroundColor = b[t];
 		this.removeEventListener('mouseOver',arguments.callee,false);
 	this.removeEventListener('click',arguments.callee,false);
