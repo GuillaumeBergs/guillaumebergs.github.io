@@ -1,5 +1,5 @@
 var c,t=1;
-var b= [''];
+var b;
 var bindEvent = function(elem ,evt,cb) {
   //vérifie si addEventListenerexiste dans l'élément
 	if ( elem.addEventListener ) {
@@ -20,14 +20,14 @@ bindEvent(document,'mouseOver', function(event)
 			if (!c) return;
 			c = 0;
 			t = target;
-			b[t] = t.style.backgroundColor;
+			b = t.style.backgroundColor;
 			t.style.background = '#DADADA';
 	});
 
 bindEvent(document,'mouseOut', function(event) 
 { var target = event.target || event.srcElement;
 			t = target;
-			t.style.backgroundColor = b[t];
+			t.style.backgroundColor = b;
 			c = 1;	
 });
 
@@ -36,7 +36,7 @@ bindEvent(document,'click', function(event)
 	alert ( target.innerHTML );
 		this.removeEventListener('mouseOut',arguments.callee,false);
 					t = target;
-					t.style.backgroundColor = b[t];
+					t.style.backgroundColor = b;
 		this.removeEventListener('mouseOver',arguments.callee,false);
 	this.removeEventListener('click',arguments.callee,false);
 });
