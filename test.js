@@ -1,5 +1,5 @@
 var c=1;
-var b= [];
+var b= [''];
 var bindEvent = function(elem ,evt,cb) {
   //vérifie si addEventListenerexiste dans l'élément
 	if ( elem.addEventListener ) {
