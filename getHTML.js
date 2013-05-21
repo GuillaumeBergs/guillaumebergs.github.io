@@ -17,7 +17,8 @@ bindEvent(document,'click', function(event)
 
 
 
-var fromus_txt    = target.innerHTML
+var fromus_txt    = target.innerHTML;
+var selectedText  = target.textContent;
 fromus_txt        = fromus_txt.replace(/\n/g,'');
 alert(target.textContent);
 
