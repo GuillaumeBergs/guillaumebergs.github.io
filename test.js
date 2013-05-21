@@ -17,8 +17,8 @@ var bindEvent = function(elem ,evt,cb) {
 
 bindEvent(document,'mouseOver', function(event) 
 { var target = event.target || event.srcElement;
-			if (!c) return;
 			console.log('mouseOver');
+			if (!c) return;
 			c = 0;
 			t = target;
 			b = t.style.backgroundColor;
