@@ -19,6 +19,7 @@ bindEvent(document,'click', function(event)
 
 var fromus_txt    = target.innerHTML;
 var fromus_selectedText  = target.textContent;
+alert("I am a moron as i know that fromus_selectedText is: "+fromus_selectedText);
 fromus_txt        = fromus_txt.replace(/\n/g,'');
 alert(target.textContent);
 
