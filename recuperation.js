@@ -38,7 +38,7 @@ function fromus_site()
 
 //déclaration de dogfunk
 {
-	fromus_sitelist['www.dogfunk.com'] = new fromus_site();
+	fromus_sitelist["www.dogfunk.com"] = new fromus_site();
 	
 	fromus_sitelist['www.dogfunk.com'].name_id[1]='buy_box_title';
 	
@@ -192,6 +192,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	}
 	
 }
+
 else
 {
 	fromus_desc='error'
@@ -199,6 +200,7 @@ else
 	fromus_objectname='error';
 	fromus_pricemin='error';
 }
+
 
 if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined')|| ( /[\S]{1,}/g.test(fromus_desc)==false ) )//En cas d'absence de description, utiliser le nom du produit.
 {
