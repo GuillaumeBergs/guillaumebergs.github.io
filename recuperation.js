@@ -37,7 +37,7 @@ function fromus_site()
 }
 
 //déclaration de dogfunk
-{
+
 	fromus_sitelist["www.dogfunk.com"] = new fromus_site();
 	
 	fromus_sitelist['www.dogfunk.com'].name_id[1]='buy_box_title';
@@ -47,7 +47,7 @@ function fromus_site()
 	fromus_sitelist['www.dogfunk.com'].img_id[1]='main_product_image';
 	
 	fromus_sitelist['www.dogfunk.com'].desc_id[1]='desc_and_bottom_line';
-}
+
 
 /////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
 
