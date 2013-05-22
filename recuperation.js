@@ -23,42 +23,30 @@ var fromus_sitelist = new Array();
 
 function fromus_site() 
 {
-	this.name_idN= 0;
 	this.name_id= new Array();
-	this.name_classN= 0;
 	this.name_class= new Array();
 	
-	this.price_idN= 0;
 	this.price_id= new Array();
-	this.price_classN= 0;
 	this.price_class= new Array();
 	
-	this.img_idN= 0;
 	this.img_id= new Array();
-	this.img_classN= 0;
 	this.img_class= new Array();
 	
-	this.desc_idN= 0;
 	this.desc_id= new Array();
-	this.desc_classN= 0;
 	this.desc_class= new Array();
 }
 
 //déclaration de dogfunk
 {
-	fromus_sitelist['dogfunk.com'] = new fromus_site();
+	fromus_sitelist['www.dogfunk.com'] = new fromus_site();
 	
-	fromus_sitelist['dogfunk.com'].name_idN=1;
-	fromus_sitelist['dogfunk.com'].name_id[1]='buy_box_title';
+	fromus_sitelist['www.dogfunk.com'].name_id[1]='buy_box_title';
 	
-	fromus_sitelist['dogfunk.com'].price_idN=1;
-	fromus_sitelist['dogfunk.com'].price_id[1]='sales_price';
+	fromus_sitelist['www.dogfunk.com'].price_id[1]='sales_price';
 	
-	fromus_sitelist['dogfunk.com'].img_idN=1;
-	fromus_sitelist['dogfunk.com'].img_id[1]='main_product_image';
+	fromus_sitelist['www.dogfunk.com'].img_id[1]='main_product_image';
 	
-	fromus_sitelist['dogfunk.com'].desc_idN=1;
-	fromus_sitelist['dogfunk.com'].desc_id[1]='desc_and_bottom_line';
+	fromus_sitelist['www.dogfunk.com'].desc_id[1]='desc_and_bottom_line';
 }
 
 /////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
@@ -99,7 +87,7 @@ localStorage["regStore"] = regStore;
 if( fromus_sitelist[fromus_site] != undefined)
 {
 	//name
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_idN.length) && (fromus_objectname === undefined) ; fromus_i++)
+	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
 	{
 		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
 		{
@@ -110,7 +98,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	if(fromus_objectname === undefined)
 	{
 		
-		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_objectname === undefined) ; fromus_i++)
+		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
 		{
 			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
 			{
@@ -126,7 +114,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	
 	//price 
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_idN.length) && (fromus_pricemin === undefined) ; fromus_i++)
+	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_pricemin === undefined) ; fromus_i++)
 	{
 		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
 		{
@@ -137,7 +125,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	if(fromus_pricemin === undefined)
 	{
 		
-		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_pricemin === undefined) ; fromus_i++)
+		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_pricemin === undefined) ; fromus_i++)
 		{
 			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
 			{
@@ -152,7 +140,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	}
 	
 	//img 
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_idN.length) && (fromus_img === undefined) ; fromus_i++)
+	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && (fromus_img === undefined) ; fromus_i++)
 	{
 		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
 		{
@@ -163,7 +151,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	if(fromus_img === undefined)
 	{
 		
-		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_classN.length) && (fromus_img === undefined) ; fromus_i++)
+		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && (fromus_img === undefined) ; fromus_i++)
 		{
 			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
 			{
@@ -178,7 +166,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	}
 	
 	//desc 
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_idN.length) && (fromus_desc === undefined) ; fromus_i++)
+	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && (fromus_desc === undefined) ; fromus_i++)
 	{
 		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
 		{
@@ -189,7 +177,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	if(fromus_desc === undefined)
 	{
 		
-		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_classN.length) && (fromus_desc === undefined) ; fromus_i++)
+		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].desc_class.length) && (fromus_desc === undefined) ; fromus_i++)
 		{
 			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
 			{
@@ -204,7 +192,6 @@ if( fromus_sitelist[fromus_site] != undefined)
 	}
 	
 }
-
 else
 {
 	fromus_desc='error'
@@ -212,7 +199,6 @@ else
 	fromus_objectname='error';
 	fromus_pricemin='error';
 }
-
 
 if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined')|| ( /[\S]{1,}/g.test(fromus_desc)==false ) )//En cas d'absence de description, utiliser le nom du produit.
 {
