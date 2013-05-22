@@ -145,13 +145,13 @@ if( fromus_sitelist[fromus_site] != undefined)
 		if( (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=undefined)  &&  (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=null) )
 		{
 		
-			if(document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).href!=undefined)
+			if(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href!=undefined)
 			{
-				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).href;
+				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href;
 			}
-			if(document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).src!=undefined)
+			if(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).src!=undefined)
 			{
-				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).src;
+				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).src;
 			}
 		}
 	}
