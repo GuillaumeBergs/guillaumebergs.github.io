@@ -89,7 +89,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	//name
 	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
 	{
-		if( document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i])!=undefined);
+		if( (document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i])!=undefined) && (document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i])!=null));
 		{
 			fromus_objectname = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]).textContent;
 		}
@@ -100,7 +100,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		
 		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
 		{
-			if( document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0]!=undefined);
+			if( (document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0]!=undefined)  && (document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0]!=null))
 			{
 				fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0].textContent;
 			}
