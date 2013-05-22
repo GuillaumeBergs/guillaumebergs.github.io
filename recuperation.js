@@ -38,15 +38,15 @@ function fromus_siteObj()
 
 //déclaration de dogfunk
 
-	fromus_sitelist['www.dogfunk.com'] = new fromus_siteObj();
-	
-	fromus_sitelist['www.dogfunk.com'].name_id[1]='buy_box_title';
-	
-	fromus_sitelist['www.dogfunk.com'].price_id[1]='sales_price';
-	
-	fromus_sitelist['www.dogfunk.com'].img_id[1]='main_product_image';
-	
-	fromus_sitelist['www.dogfunk.com'].desc_id[1]='desc_and_bottom_line';
+fromus_sitelist['www.dogfunk.com'] = new fromus_siteObj();
+
+fromus_sitelist['www.dogfunk.com'].name_id[1]='buy_box_title';
+
+fromus_sitelist['www.dogfunk.com'].price_id[1]='sales_price';
+
+fromus_sitelist['www.dogfunk.com'].img_id[1]='main_product_image';
+
+fromus_sitelist['www.dogfunk.com'].desc_id[1]='desc_and_bottom_line';
 
 
 /////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
@@ -142,18 +142,19 @@ if( fromus_sitelist[fromus_site] != undefined)
 	//img 
 	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && (fromus_img === undefined) ; fromus_i++)
 	{
-		if( (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=undefined)){if((document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!==null) )
+		if(document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]))
 		{
-		console.log(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]));
-			if(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href!=undefined)
-			{
-				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href;
-			}
-			if(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).src!=undefined)
-			{
-				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).src;
-			}
-		}}
+				console.log(document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]));
+				if(document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]).href!=undefined)
+				{
+					fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]).href;
+				}
+				if(document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]).src!=undefined)
+				{
+					fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]).src;
+				}
+			
+		}
 	}
 	
 	if(fromus_img === undefined)
