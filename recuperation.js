@@ -89,9 +89,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 	//name
 	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
 	{
-		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
+		if( document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i])!=undefined);
 		{
-			fromus_objectname = document.getElementById(fromus_sitelist[fromus_site]).textContent;
+			fromus_objectname = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]).textContent;
 		}
 	}
 	
@@ -100,9 +100,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 		
 		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
 		{
-			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0]!=undefined);
 			{
-				fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+				fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0].textContent;
 			}
 		}
 	}
@@ -116,9 +116,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 	//price 
 	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_pricemin === undefined) ; fromus_i++)
 	{
-		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
+		if( document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i])!=undefined);
 		{
-			fromus_pricemin = document.getElementById(fromus_sitelist[fromus_site]).textContent;
+			fromus_pricemin = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]).textContent;
 		}
 	}
 	
@@ -127,9 +127,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 		
 		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_pricemin === undefined) ; fromus_i++)
 		{
-			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0]!=undefined);
 			{
-				fromus_pricemin = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+				fromus_pricemin = document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0].textContent;
 			}
 		}
 	}
@@ -142,9 +142,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 	//img 
 	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && (fromus_img === undefined) ; fromus_i++)
 	{
-		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
+		if( document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=undefined);
 		{
-			fromus_img = document.getElementById(fromus_sitelist[fromus_site]).textContent;
+			fromus_img = document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).textContent;
 		}
 	}
 	
@@ -153,9 +153,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 		
 		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && (fromus_img === undefined) ; fromus_i++)
 		{
-			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0]!=undefined);
 			{
-				fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+				fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].textContent;
 			}
 		}
 	}
@@ -168,9 +168,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 	//desc 
 	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && (fromus_desc === undefined) ; fromus_i++)
 	{
-		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
+		if( document.getElementById(fromus_sitelist[fromus_site].desc_id[fromus_i])!=undefined);
 		{
-			fromus_desc = document.getElementById(fromus_sitelist[fromus_site]).textContent;
+			fromus_desc = document.getElementById(fromus_sitelist[fromus_site].desc_id[fromus_i]).textContent;
 		}
 	}
 	
@@ -179,9 +179,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 		
 		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].desc_class.length) && (fromus_desc === undefined) ; fromus_i++)
 		{
-			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site].desc_class[fromus_i])[0]!=undefined);
 			{
-				fromus_desc = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+				fromus_desc = document.getElementsByClassName(fromus_sitelist[fromus_site].desc_class[fromus_i])[0].textContent;
 			}
 		}
 	}
