@@ -144,7 +144,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	{
 		if( (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=undefined)  &&  (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=null) )
 		{
-		
+		alert(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]));
 			if(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href!=undefined)
 			{
 				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href;
@@ -163,11 +163,11 @@ if( fromus_sitelist[fromus_site] != undefined)
 		{
 			if( (document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0]!=undefined)  &&  (document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0]!=null))
 			{
-				if(document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].href!=undefined)
+				if(document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].href != undefined)
 				{
 					fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].href;
 				}
-				if(fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].textContent!=undefined)
+				if(fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].src != undefined)
 				{
 					fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].src;
 				}
