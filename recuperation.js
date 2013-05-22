@@ -144,7 +144,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	{
 		if( (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=undefined)){if((document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!==null) )
 		{
-		alert(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]));
+		console.log(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]));
 			if(document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href!=undefined)
 			{
 				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].img_class[fromus_i]).href;
