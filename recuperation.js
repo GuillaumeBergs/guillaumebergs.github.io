@@ -144,7 +144,15 @@ if( fromus_sitelist[fromus_site] != undefined)
 	{
 		if( (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=undefined)  &&  (document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i])!=null) )
 		{
-			fromus_img = document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).textContent;
+		
+			if(document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).href!=undefined)
+			{
+				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).href;
+			}
+			if(document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).src!=undefined)
+			{
+				fromus_img	=	document.getElementById(fromus_sitelist[fromus_site].name_img[fromus_i]).src;
+			}
 		}
 	}
 	
@@ -155,7 +163,14 @@ if( fromus_sitelist[fromus_site] != undefined)
 		{
 			if( (document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0]!=undefined)  &&  (document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0]!=null))
 			{
-				fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].textContent;
+				if(document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].href!=undefined)
+				{
+					fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].href;
+				}
+				if(fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].textContent;!=undefined)
+				{
+					fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].src;
+				}
 			}
 		}
 	}
