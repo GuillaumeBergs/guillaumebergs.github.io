@@ -167,7 +167,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 				{
 					fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].href;
 				}
-				if(fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].textContent;!=undefined)
+				if(fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].textContent!=undefined)
 				{
 					fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0].src;
 				}
