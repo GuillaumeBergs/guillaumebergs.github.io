@@ -21,7 +21,7 @@ fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;
 var fromus_sitelist = new Array();
 
-function fromus_site() 
+function fromus_siteObj() 
 {
 	this.name_id= new Array();
 	this.name_class= new Array();
@@ -38,7 +38,7 @@ function fromus_site()
 
 //déclaration de dogfunk
 
-	fromus_sitelist['www.dogfunk.com'] = new fromus_site();
+	fromus_sitelist['www.dogfunk.com'] = new fromus_siteObj();
 	
 	fromus_sitelist['www.dogfunk.com'].name_id[1]='buy_box_title';
 	
