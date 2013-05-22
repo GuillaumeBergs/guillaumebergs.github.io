@@ -21,7 +21,7 @@ fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;
 var fromus_sitelist = new Array();
 
-function fromus_site(vide) 
+function fromus_site() 
 {
 	this.name_id= new Array();
 	this.name_class= new Array();
@@ -32,13 +32,13 @@ function fromus_site(vide)
 	this.img_id= new Array();
 	this.img_class= new Array();
 	
-	this.desc_id= new Array();
+	this.desc_id= new Array();;
 	this.desc_class= new Array();
 }
 
 //déclaration de dogfunk
 
-	fromus_sitelist["www.dogfunk.com"] = new fromus_site();
+	fromus_sitelist['www.dogfunk.com'] = new fromus_site();
 	
 	fromus_sitelist['www.dogfunk.com'].name_id[1]='buy_box_title';
 	
