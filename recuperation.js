@@ -21,7 +21,7 @@ fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;
 var fromus_sitelist = new Array();
 
-function fromus_site() 
+function fromus_site(vide) 
 {
 	this.name_id= new Array();
 	this.name_class= new Array();
