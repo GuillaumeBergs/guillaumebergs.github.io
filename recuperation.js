@@ -207,7 +207,7 @@ fromus_sitelist['www.neimanmarcus.com'].desc_class.push('description-left');
 
 fromus_sitelist["www.neimanmarcus.com"] = new fromus_site;
 fromus_sitelist['www.neimanmarcus.com'].name_id.push('productName');
-fromus_sitelist['www.neimanmarcus.com'].name_class.push('lineItemInfo')';
+fromus_sitelist['www.neimanmarcus.com'].name_class.push('lineItemInfo');
 fromus_sitelist['www.neimanmarcus.com'].price_class.push('price');
 fromus_sitelist['www.neimanmarcus.com'].img_class.push('zoom-available');
 fromus_sitelist['www.neimanmarcus.com'].desc_class.push('productCutline');
