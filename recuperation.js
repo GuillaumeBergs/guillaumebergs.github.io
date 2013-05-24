@@ -890,6 +890,6 @@ localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];
 
 //Mise à zéro des indicateurs
 localStorage["fromus_morename"] =	JSON.stringify(false);
-localStorage["fromus_moreprice"]	=	JSON.stringify(false);
+localStorage["fromus_moreprice"]=	JSON.stringify(false);
 localStorage["fromus_moreimg"]	=	JSON.stringify(false);
 localStorage["fromus_moredesc"]	=	JSON.stringify(false);
