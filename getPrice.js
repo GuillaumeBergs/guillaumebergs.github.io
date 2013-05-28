@@ -1,6 +1,6 @@
 var bindEvent = function(elem ,evt,cb) {
-  //vérifie si addEventListenerexiste dans l'élément
-  if ( elem.addEventListener ) {
+	//vérifie si addEventListenerexiste dans l'élément
+	if ( elem.addEventListener ) {
 		elem.addEventListener(evt,cb,false);
         //si addEventListener n'est pas présent, vérifie si le navigateur est une version  d'IE
         } else if ( elem.attachEvent ) {
@@ -15,69 +15,73 @@ var bindEvent = function(elem ,evt,cb) {
 bindEvent(document,'click', function(event) 
 { var target = event.target || event.srcElement;
 
-
-
-var fromus_txt    = target.innerHTML;
-var fromus_selectedText  = target.textContent;
-
-fromus_txt        = fromus_txt.replace(/\n/g,'');
-alert(target.textContent);
-
-if(/id=\"/.test(fromus_txt))
-{
- var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-  alert(fromus_idmatch);
-  
-}
-if(/class=\"/.test(fromus_txt))
-{
-var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-  alert(fromus_classmatch);
-  
-}
-
-alert("Ce qui est ajouté à la base de données est...");
-
-if(fromus_idmatch !=undefined)
-{
-    if(fromus_classmatch !=undefined)
-  {
-     // id et class     
- alert("<getprodpricetype>\"id\"<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
- alert("<getprodpricetype>\"class\"<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
-     
-  }
-    else
-  {
-    //id sans class
- alert("<getprodpricetype>\"id\"<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
-      
-  }
-  
-  fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
- 
-}
-else
-{
-    if(fromus_classmatch !=undefined)
-  { //Class sans id
-
- alert("<getprodpricetype>\"class\"<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
-
-  fromus_selectedText = fromus_classmatch[0].substring(6,fromus_classmatch[0].length-1);
-  }
-    else
-  {
-    //ni class ni id
-  }  
-}
-alert("Et ce qui est affiché dans la case est...");
-
-
-
-  fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementsByClassName(fromus_selectedText)[0].textContent)[0];
-
-alert(fromus_selectedText);
+	var 	fromus_txt    = target.innerHTML;
+	var 	fromus_selectedText  = target.textContent;
+	var 	fromus_selectedTexttmp;
+	
+	var 	fromus_site = document.location.href;		//récupération de l'adresse
+			fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+	
+	fromus_txt        = fromus_txt.replace(/\n/g,'');
+	console.log(target.textContent);
+	
+	if(/id=\"/.test(fromus_txt))
+	{
+		var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
+		console.log(fromus_idmatch);
+	}
+	if(/class=\"/.test(fromus_txt))
+	{
+		var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
+		 console.log(fromus_classmatch);
+	}
+	
+	console.log("Ce qui est ajouté à la base de données est...");
+	
+	if(fromus_idmatch !=undefined)
+	{
+		if(fromus_classmatch !=undefined)
+		{
+			// id et class 
+			
+			fromus_selectedTexttmp	= fromus_idmatch[0].substring(3,fromus_idmatch[0].length);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
+			
+			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(6,fromus_classmatch[0].length);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
+			
+		}
+		else
+		{
+			//id sans class
+			fromus_selectedTexttmp	=	fromus_idmatch[0].substring(3,fromus_idmatch[0].length);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
+			
+		}
+		
+		fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
+		fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementById(fromus_selectedText).textContent)[0];
+		
+	}
+	else
+	{
+		if(fromus_classmatch !=undefined)
+		{ //Class sans id
+			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(6,fromus_classmatch[0].length);
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
+			
+			fromus_selectedText = fromus_classmatch[0].substring(6,fromus_classmatch[0].length-1);
+			fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementsByClassName(fromus_selectedText)[0].textContent)[0];
+		}
+		else
+		{
+			//ni class ni id
+			console.log('Rien.')
+			fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+		}  
+	}
+	console.log("Et ce qui est affiché dans la case est...");
+	console.log(fromus_selectedText);
 
 	this.removeEventListener('click',arguments.callee,false);
 });
