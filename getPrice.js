@@ -21,7 +21,8 @@ bindEvent(document,'click', function(event)
 	
 	var 	fromus_site 	=	document.location.href;		//récupération de l'adresse
 			fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
-			fromus_site	=	'www'+/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[1];
+			fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
+			fromus_site	=	'www'+fromus_site;
 	
 	fromus_txt        = fromus_txt.replace(/\n/g,'');
 	console.log(target.textContent);
@@ -71,7 +72,7 @@ bindEvent(document,'click', function(event)
 			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
 			
-			fromus_selectedText = fromus_classmatch[0].substring(6,fromus_classmatch[0].length-1);
+			fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 			fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementsByClassName(fromus_selectedText)[0].textContent)[0];
 		}
 		else
