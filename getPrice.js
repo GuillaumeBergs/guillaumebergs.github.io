@@ -14,15 +14,15 @@ var bindEvent = function(elem ,evt,cb) {
 
 bindEvent(document,'click', function(event) 
 { var target = event.target || event.srcElement;
-
+	
 	var 	fromus_txt    = target.innerHTML;
 	var 	fromus_selectedText  = target.textContent;
 	var 	fromus_selectedTexttmp;
 	
 	var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
-			fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
-			fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
-			fromus_site	=	'www'+fromus_site;
+	fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+	fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
+	fromus_site	=	'www'+fromus_site;
 	
 	fromus_txt        = fromus_txt.replace(/\n/g,'');
 	console.log(target.textContent);
@@ -35,7 +35,7 @@ bindEvent(document,'click', function(event)
 	if(/class=\"/.test(fromus_txt))
 	{
 		var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-		 console.log(fromus_classmatch);
+		console.log(fromus_classmatch);
 	}
 	
 	console.log("Ce qui est ajouté à la base de données est...");
@@ -76,7 +76,14 @@ bindEvent(document,'click', function(event)
 			
 			fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
 			console.log(fromus_selectedText);
-			fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+			if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+			{
+				fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+			}
+			else
+			{
+				fromus_selectedText	=	'';
+			}
 		}
 		else
 		{
@@ -87,6 +94,6 @@ bindEvent(document,'click', function(event)
 	}
 	console.log("Et ce qui est affiché dans la case est...");
 	console.log(fromus_selectedText);
-
+	
 	this.removeEventListener('click',arguments.callee,false);
 });
