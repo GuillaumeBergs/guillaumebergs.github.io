@@ -19,8 +19,9 @@ bindEvent(document,'click', function(event)
 	var 	fromus_selectedText  = target.textContent;
 	var 	fromus_selectedTexttmp;
 	
-	var 	fromus_site = document.location.href;		//récupération de l'adresse
-			fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+	var 	fromus_site 	=	document.location.href;		//récupération de l'adresse
+			fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+			fromus_site	=	'www'+/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[1];
 	
 	fromus_txt        = fromus_txt.replace(/\n/g,'');
 	console.log(target.textContent);
