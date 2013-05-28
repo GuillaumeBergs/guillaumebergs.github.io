@@ -75,6 +75,7 @@ bindEvent(document,'click', function(event)
 			fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 			
 			fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
+			console.log(fromus_selectedText);
 			fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
 		}
 		else
