@@ -44,18 +44,18 @@ bindEvent(document,'click', function(event)
 		{
 			// id et class 
 			
-			fromus_selectedTexttmp	= fromus_idmatch[0].substring(3,fromus_idmatch[0].length);			
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push('+fromus_selectedTexttmp+');');
+			fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
 			
-			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(6,fromus_classmatch[0].length);			
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push('+fromus_selectedTexttmp+');');
+			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
 			
 		}
 		else
 		{
 			//id sans class
-			fromus_selectedTexttmp	=	fromus_idmatch[0].substring(3,fromus_idmatch[0].length);			
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push('+fromus_selectedTexttmp+');');
+			fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
 			
 		}
 		
@@ -67,8 +67,8 @@ bindEvent(document,'click', function(event)
 	{
 		if(fromus_classmatch !=undefined)
 		{ //Class sans id
-			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(6,fromus_classmatch[0].length);
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push('+fromus_selectedTexttmp+');');
+			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
 			
 			fromus_selectedText = fromus_classmatch[0].substring(6,fromus_classmatch[0].length-1);
 			fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementsByClassName(fromus_selectedText)[0].textContent)[0];
