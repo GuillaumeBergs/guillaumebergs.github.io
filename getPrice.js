@@ -55,8 +55,7 @@ if(fromus_idmatch !=undefined)
   }
   
   fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
-  fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementById(fromus_selectedText).textContent)[0];
-  
+ 
 }
 else
 {
@@ -66,7 +65,6 @@ else
  alert("<getprodpricetype>\"class\"<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
 
   fromus_selectedText = fromus_classmatch[0].substring(6,fromus_classmatch[0].length-1);
-  fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementsByClassName(fromus_selectedText)[0].textContent)[0];
   }
     else
   {
@@ -74,11 +72,12 @@ else
   }  
 }
 alert("Et ce qui est affiché dans la case est...");
+
+
+
+  fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementsByClassName(fromus_selectedText)[0].textContent)[0];
+
 alert(fromus_selectedText);
-
-
-
-
 
 	this.removeEventListener('click',arguments.callee,false);
 });
