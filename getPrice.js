@@ -12,7 +12,7 @@ var bindEvent = function(elem ,evt,cb) {
 	}
 }
 
-bindEvent(document,'click', function(event) 
+bindEvent(document,'focus', function(event) 
 { var target = event.target || event.srcElement;
 	
 	var 	fromus_txt    = target.innerHTML;
@@ -61,8 +61,12 @@ bindEvent(document,'click', function(event)
 			
 		}
 		
-		fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
-		fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementById(fromus_selectedText).textContent)[0];
+		fromus_selectedText	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
+		fromus_selectedText	=	document.getElementById(fromus_selectedText).textContent;
+		if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+		{
+			fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+		}
 		
 	}
 	else
@@ -89,11 +93,15 @@ bindEvent(document,'click', function(event)
 		{
 			//ni class ni id
 			console.log('Rien.')
-			fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+			if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+			{
+				fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+			}
 		}  
 	}
 	console.log("Et ce qui est affiché dans la case est...");
 	console.log(fromus_selectedText);
+	localStorage["regPrice"] = fromus_selectedText;
 	
 	this.removeEventListener('click',arguments.callee,false);
 });
