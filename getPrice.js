@@ -20,7 +20,7 @@ bindEvent(document,'mouseover', function(event)
 	
 }
 
-bindEvent(elem,'mouseout', function(event) 
+bindEvent(document,'mouseout', function(event) 
 { var target = event.target || event.srcElement;
 	
 	console.log('mouseout');
