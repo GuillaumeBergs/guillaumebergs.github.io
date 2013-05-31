@@ -12,14 +12,22 @@ var bindEvent = function(elem ,evt,cb) {
 	}
 }
 
+
+function RGB2HEX(rgb) {
+var char = "0123456789ABCDEF";
+return String(char.charAt(Math.floor(rgb / 16))) + String(char.charAt(rgb - (Math.floor(rgb / 16) * 16)));
+} 
+
 var inversHTML	=	function(htmlcode){
-	console.log('Convertit la valeur en decimal, htmlcode = ' + htmlcode);
+console.log('start, htmlcode = ' + htmlcode);
+	htmlcode = RGB2HEX(htmlcode);
+console.log('rgb2hex, htmlcode = ' + htmlcode);
 	var fromus_hexatemp = parseInt(htmlcode, 16);
-	console.log('Manipulation de la couleur, fromus_hexatemp = ' + fromus_hexatemp);
+console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
 	fromus_hexatemp = fromus_hexatemp ^ 16777215;
-	console.log('remise en hexa, fromus_hexatemp = ' + fromus_hexatemp);
+console.log('XOR, fromus_hexatemp = ' + fromus_hexatemp);
 	htmlcode = fromus_hexatemp.toString(16);
-	console.log('fin. htmlcode = ' + htmlcode);
+console.log('end après toString, htmlcode = ' + htmlcode);
 	return htmlcode;
 	}
 
