@@ -12,11 +12,21 @@ var bindEvent = function(elem ,evt,cb) {
 	}
 }
 
+var inversHTML	=	function(htmlcode){
+	//Convertit la valeur en decimal
+	var fromus_hexatemp = parseInt(htmlcode, 16);
+	// Manipulation de la couleur
+	fromus_haxatemp = fromus_hexatemp ^ 42;
+	//remise en hexa
+	htmlcode = fromus_hexatemp.toString(16);
+	return htmlcode;
+	}
+
 bindEvent(document,'mouseover', function(event) 
 { var target = event.target || event.srcElement;
 	
 	console.log('mouseover');
-	target.style.background = '#3ADF00';
+	target.style.background = inversHTML(target.style.background);
 	
 });
 
@@ -24,7 +34,7 @@ bindEvent(document,'mouseout', function(event)
 { var target = event.target || event.srcElement;
 	
 	console.log('mouseout');
-	target.style.background = '#B40404';
+	target.style.background = inversHTML(target.style.background);
 	
 });
 
