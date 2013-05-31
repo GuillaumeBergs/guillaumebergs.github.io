@@ -13,12 +13,13 @@ var bindEvent = function(elem ,evt,cb) {
 }
 
 var inversHTML	=	function(htmlcode){
-	console.log('Convertit la valeur en decimal, fromus_hexatemp = ' + fromus_hexatemp);
+	console.log('Convertit la valeur en decimal, htmlcode = ' + htmlcode);
 	var fromus_hexatemp = parseInt(htmlcode, 16);
 	console.log('Manipulation de la couleur, fromus_hexatemp = ' + fromus_hexatemp);
 	fromus_hexatemp = fromus_hexatemp ^ 16777215;
 	console.log('remise en hexa, fromus_hexatemp = ' + fromus_hexatemp);
 	htmlcode = fromus_hexatemp.toString(16);
+	console.log('fin. htmlcode = ' + htmlcode);
 	return htmlcode;
 	}
 
