@@ -12,7 +12,7 @@ var bindEvent = function(elem ,evt,cb) {
 	}
 }
 
-bindEvent(document,'focusin', function(event) 
+bindEvent(document,'mouseover', function(event) 
 { var target = event.target || event.srcElement;
 	
 	var 	fromus_txt    = target.innerHTML;
