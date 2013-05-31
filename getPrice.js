@@ -35,7 +35,7 @@ bindEvent(document,'mouseover', function(event)
 { var target = event.target || event.srcElement;
 	
 	console.log('mouseover');
-	arget.style.backgroundColor = '#'+inversHTML(arget.style.backgroundColor);
+	target.style.backgroundColor = '#'+inversHTML(target.style.backgroundColor);
 	
 });
 
@@ -43,7 +43,7 @@ bindEvent(document,'mouseout', function(event)
 { var target = event.target || event.srcElement;
 	
 	console.log('mouseout');
-	arget.style.backgroundColor = '#'+inversHTML(arget.style.backgroundColor);
+	target.style.backgroundColor = '#'+inversHTML(target.style.backgroundColor);
 	
 });
 
