@@ -17,6 +17,7 @@ function colorToHex(color) {	//Normalise la couleur au format 123456 (au lieu de
     if (color.substr(0, 1) === '#') {
         return color.substr(1,color.length);
     }
+    console.log('color avant regex: '+color);
     var digits = /(.*?)rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/.exec(color);
     
     var red = parseInt(digits[2]);
