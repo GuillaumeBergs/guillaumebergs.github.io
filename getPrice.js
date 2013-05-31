@@ -18,7 +18,7 @@ bindEvent(document,'mouseover', function(event)
 	console.log('mouseover');
 	
 	
-}
+});
 
 bindEvent(document,'mouseout', function(event) 
 { var target = event.target || event.srcElement;
@@ -26,7 +26,7 @@ bindEvent(document,'mouseout', function(event)
 	console.log('mouseout');
 	
 	
-}, false);
+});
 
 
 
