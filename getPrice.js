@@ -26,25 +26,25 @@ function RGB2HEX(r,g,b) {
 }
 
 var inversHTML	=	function(htmlcode){
-	console.log('start, htmlcode = ' + htmlcode);
+							console.log('start, htmlcode = ' + htmlcode);
 	htmlcode = RGB2HEX(htmlcode);
-	console.log('rgb2hex, htmlcode = ' + htmlcode);
+							console.log('rgb2hex, htmlcode = ' + htmlcode);
 	var fromus_hexatemp = parseInt(htmlcode, 16);
-	console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
+							console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
 	fromus_hexatemp = fromus_hexatemp ^ 16777215;
-	console.log('XOR, fromus_hexatemp = ' + fromus_hexatemp);
+							console.log('XOR, fromus_hexatemp = ' + fromus_hexatemp);
 	htmlcode = fromus_hexatemp.toString(16);
-	console.log('end après toString, htmlcode = ' + htmlcode);
+							console.log('end après toString, htmlcode = ' + htmlcode);
 	return htmlcode;
 }
 
-bindEvent(document,'mouseover', function(event) 
+var mouser = bindEvent(document,'mouseover', function(event) 
 { var target = event.target || event.srcElement;
 	console.log('mouseover');
 	target.style.backgroundColor = '#'+inversHTML(target.style.backgroundColor);
 });
 
-bindEvent(document,'mouseout', function(event) 
+var mouset = bindEvent(document,'mouseout', function(event) 
 { var target = event.target || event.srcElement;
 	console.log('mouseout');
 	target.style.backgroundColor = '#'+inversHTML(target.style.backgroundColor);
@@ -143,6 +143,7 @@ bindEvent(document,'click', function(event)
 	console.log("Et ce qui est affiché dans la case est...");
 	console.log(fromus_selectedText);
 	localStorage["regPrice"] = fromus_selectedText;
-	
+	mouser.removeEventListener('mouseover',arguments.calle,false);
+	mouset.removeEventListener('mouseout',arguments.calle,false);
 	this.removeEventListener('click',arguments.callee,false);
 });		
