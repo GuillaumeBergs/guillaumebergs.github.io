@@ -13,38 +13,41 @@ var bindEvent = function(elem ,evt,cb) {
 }
 
 
-function RGB2HEX(rgb) {
-var char = "0123456789ABCDEF";
-return String(char.charAt(Math.floor(rgb / 16))) + String(char.charAt(rgb - (Math.floor(rgb / 16) * 16)));
-} 
+function RGB2HEX(r,g,b) {
+	var hexVal = function(n) {
+		var data = "0123456789ABCDEF";
+		if (n==null) return "00";
+		n=parseInt(n); 
+		if (n==0 || isNaN(n)) return "00";
+		n=Math.round(Math.min(Math.max(0,n),255));
+		return data.charAt((n-n%16)/16) + data.charAt(n%16);
+	}
+	return hexVal(r)+hexVal(g)+hexVal(b);
+}
 
 var inversHTML	=	function(htmlcode){
-console.log('start, htmlcode = ' + htmlcode);
+	console.log('start, htmlcode = ' + htmlcode);
 	htmlcode = RGB2HEX(htmlcode);
-console.log('rgb2hex, htmlcode = ' + htmlcode);
+	console.log('rgb2hex, htmlcode = ' + htmlcode);
 	var fromus_hexatemp = parseInt(htmlcode, 16);
-console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
+	console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
 	fromus_hexatemp = fromus_hexatemp ^ 16777215;
-console.log('XOR, fromus_hexatemp = ' + fromus_hexatemp);
+	console.log('XOR, fromus_hexatemp = ' + fromus_hexatemp);
 	htmlcode = fromus_hexatemp.toString(16);
-console.log('end après toString, htmlcode = ' + htmlcode);
+	console.log('end après toString, htmlcode = ' + htmlcode);
 	return htmlcode;
-	}
+}
 
 bindEvent(document,'mouseover', function(event) 
 { var target = event.target || event.srcElement;
-	
 	console.log('mouseover');
 	target.style.backgroundColor = '#'+inversHTML(target.style.backgroundColor);
-	
 });
 
 bindEvent(document,'mouseout', function(event) 
 { var target = event.target || event.srcElement;
-	
 	console.log('mouseout');
 	target.style.backgroundColor = '#'+inversHTML(target.style.backgroundColor);
-	
 });
 
 
@@ -142,4 +145,4 @@ bindEvent(document,'click', function(event)
 	localStorage["regPrice"] = fromus_selectedText;
 	
 	this.removeEventListener('click',arguments.callee,false);
-});	
+});		
