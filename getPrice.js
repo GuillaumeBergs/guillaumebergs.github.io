@@ -27,7 +27,7 @@ bindEvent(document,'mouseover', function(event)
 { var target = event.target || event.srcElement;
 	
 	console.log('mouseover');
-	target.style.background = inversHTML(target.style.background);
+	target.style.background = '#'+inversHTML(target.style.background);
 	
 });
 
@@ -35,7 +35,7 @@ bindEvent(document,'mouseout', function(event)
 { var target = event.target || event.srcElement;
 	
 	console.log('mouseout');
-	target.style.background = inversHTML(target.style.background);
+	target.style.background = '#'+inversHTML(target.style.background);
 	
 });
 
