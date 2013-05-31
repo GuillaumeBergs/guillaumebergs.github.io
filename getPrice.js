@@ -16,7 +16,7 @@ var inversHTML	=	function(htmlcode){
 	//Convertit la valeur en decimal
 	var fromus_hexatemp = parseInt(htmlcode, 16);
 	// Manipulation de la couleur
-	fromus_haxatemp = fromus_hexatemp ^ 42;
+	fromus_haxatemp = fromus_hexatemp ^ 111111;
 	//remise en hexa
 	htmlcode = fromus_hexatemp.toString(16);
 	return htmlcode;
