@@ -13,15 +13,24 @@ var bindEvent = function(elem ,evt,cb) {
 }
 
 
-function RGB2HEX(rgb) {
-var char = "0123456789ABCDEF";
-return String(char.charAt(Math.floor(rgb / 16))) + String(char.charAt(rgb - (Math.floor(rgb / 16) * 16)));
-} 
+function colorToHex(color) {	//Normalise la couleur au format 123456 (au lieu de #123456 ou rgb(012, 345, 678) )
+    if (color.substr(0, 1) === '#') {
+        return color.substr(1,color.length);
+    }
+    var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+    
+    var red = parseInt(digits[2]);
+    var green = parseInt(digits[3]);
+    var blue = parseInt(digits[4]);
+    
+    var rgb = blue | (green << 8) | (red << 16);
+    return gb.toString(16);
+};
 
 var inversHTML	=	function(htmlcode){
 console.log('start, htmlcode = ' + htmlcode);
-	htmlcode = RGB2HEX(htmlcode);
-console.log('rgb2hex, htmlcode = ' + htmlcode);
+	htmlcode = colorToHex(htmlcode);
+console.log('hexnorm, htmlcode = ' + htmlcode);
 	var fromus_hexatemp = parseInt(htmlcode, 16);
 console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
 	fromus_hexatemp = fromus_hexatemp ^ 16777215;
