@@ -17,7 +17,7 @@ function ColorConvert(color) { //Conversion vers un format universel
     if (color.substr(0, 1) === '#') {
         return color.substr(1,7);
 	}
-    var digits = /(.*?)rgb[a]{0,1}\((\d+), (\d+), (\d+)/.exec(color);
+    var digits = /(.*?)rgb[a]{0,1}\((\d+), (\d+), (\d+).*/.exec(color);
     
     var red = parseInt(digits[2]);
     var green = parseInt(digits[3]);
