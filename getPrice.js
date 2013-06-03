@@ -85,7 +85,7 @@ var mouser = bindEvent(document,'mouseover', function(event)
 var mouset = bindEvent(document,'mouseout', function(event) 
 { var target = event.target || event.srcElement;
 	console.log('mouseout');
-	target.style.backgroundColor = '#'+inversHTML(getComputedStyle(target).backgroundColor);
+	target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
 });
 
 
