@@ -50,7 +50,7 @@ var inversHTML	=	function(htmlcode){
 		green	=	green	^	255;
 		blue	=	blue	^	255;
 		
-		if(alpha)
+		if(alpha!=undefined)
 		{
 			alpha	=	alpha	^	255;
 			}
@@ -66,13 +66,13 @@ var inversHTML	=	function(htmlcode){
 		green	=	green.toString(10);
 		blue	=	blue.toString(10);
 		
-		if(alpha)
+		if(alpha!=undefined)
 		{
 			alpha	=	alpha.toString(10);
 			}
 		
 		htmlcode = red+','+green+','+blue;
-		if(alpha)
+		if(alpha!=undefined)
 		{
 			htmlcode = htmlcode + ',' + alpha;
 		}
