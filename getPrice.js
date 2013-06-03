@@ -13,81 +13,81 @@ var bindEvent = function(elem ,evt,cb) {
 }
 
 
-function ColorConvert(color) { //Conversion vers un format universel
-    if (color.substr(0, 1) === '#') {
-        return color.substr(1,7);
-	}
-    var digits = /(.*?)rgb[a]{0,1}\((\d+), (\d+), (\d+).*/.exec(color);
-    
-    var red = parseInt(digits[2]);
-    var green = parseInt(digits[3]);
-    var blue = parseInt(digits[4]);
-    
-    var rgb = blue | (green << 8) | (red << 16);
-    return digits[1] +''+ rgb.toString(16);
-}
+
 
 var inversHTML	=	function(htmlcode){
 	console.log('start, htmlcode = ' + htmlcode);
-	htmlcode = ColorConvert(htmlcode);
-	
-	var fus_r	=	htmlcode.substring(0,2);
-	var fus_g	=	htmlcode.substring(2,4);
-	var fus_b	=	htmlcode.substring(4,6);	
 	
 	
-	console.log('ColorConvert,');
-	console.log('fus_r = ' + fus_r);
-	console.log('fus_g = ' + fus_g);
-	console.log('fus_b = ' + fus_b);
-	
-	fus_r	=	parseInt(fus_r, 16);
-	fus_g	=	parseInt(fus_g, 16);
-	fus_b	=	parseInt(fus_b, 16);
-	console.log('parseInt' );
-	
-	console.log('fus_r = ' + fus_r);
-	console.log('fus_g = ' + fus_g);
-	console.log('fus_b = ' + fus_b);							
-	
-	fus_r 	=	fus_r	^	255;
-	fus_g	=	fus_g	^	255;
-	fus_b	=	fus_b	^	255;
-	console.log('XOR' );
-	
-	console.log('fus_r = ' + fus_r);
-	console.log('fus_g = ' + fus_g);
-	console.log('fus_b = ' + fus_b);							
-	
-	fus_r 	=	fus_r.toString(16);
-	if(fus_r =='0')
+    if (color.substr(0, 1) === '#') 
 	{
-		fus_r = '00';
+		color = color.substr(1,7);
+		color = parseInt(color,16);
+		color = color ^16777215;
+		return color;
 	}
-	
-	fus_g	=	fus_g.toString(16);
-	if(fus_g =='0')
-	{
-		fus_g = '00';
+	else
+	{	
+		var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(color);
+		
+		var red = parseInt(digits[2]);
+		var green = parseInt(digits[3]);
+		var blue = parseInt(digits[4]);
+		
+		console.log('ColorConvert,');
+		console.log('red = ' + red);
+		console.log('green = ' + green);
+		console.log('blue = ' + blue);
+		
+		red	=	parseInt(red, 16);
+		green	=	parseInt(green, 16);
+		blue	=	parseInt(blue, 16);
+		console.log('parseInt' );
+		
+		console.log('red = ' + red);
+		console.log('green = ' + green);
+		console.log('blue = ' + blue);							
+		
+		red 	=	red	^	255;
+		green	=	green	^	255;
+		blue	=	blue	^	255;
+		console.log('XOR' );
+		
+		console.log('red = ' + red);
+		console.log('green = ' + green);
+		console.log('blue = ' + blue);							
+		
+		red 	=	red.toString(16);
+		if(red =='0')
+		{
+			red = '00';
+		}
+		
+		green	=	green.toString(16);
+		if(green =='0')
+		{
+			green = '00';
+		}
+		
+		blue	=	blue.toString(16);
+		if(blue =='0')
+		{
+			blue = '00';
+		}
+		
+		htmlcode = red+','+green+','+blue;
+		console.log('end après toString, htmlcode = ' + htmlcode);
+		
+		htmlcode = digits[1]+htmlcode+digits[5];
+		
+		return htmlcode;
 	}
-	
-	fus_b	=	fus_b.toString(16);
-	if(fus_b =='0')
-	{
-		fus_b = '00';
-	}
-	
-	htmlcode = fus_r+fus_g+fus_b;
-	console.log('end après toString, htmlcode = ' + htmlcode);
-	
-	
-	return htmlcode;
 }
 
 var mouser = bindEvent(document,'mouseover', function(event) 
 { var target = event.target || event.srcElement;
 	console.log('mouseover');
-	target.style.backgroundColor = '#'+inversHTML(getComputedStyle(target).backgroundColor);
+	target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
 });
 
 var mouset = bindEvent(document,'mouseout', function(event) 
