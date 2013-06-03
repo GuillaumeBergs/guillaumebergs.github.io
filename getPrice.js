@@ -13,16 +13,18 @@ var bindEvent = function(elem ,evt,cb) {
 }
 
 
-function RGB2HEX(r,g,b) {
-	var hexVal = function(n) {
-		var data = "0123456789ABCDEF";
-		if (n==null) return "00";
-		n=parseInt(n); 
-		if (n==0 || isNaN(n)) return "00";
-		n=Math.round(Math.min(Math.max(0,n),255));
-		return data.charAt((n-n%16)/16) + data.charAt(n%16);
-	}
-	return hexVal(r)+hexVal(g)+hexVal(b);
+function RGB2HEX(color) { //Conversion vers un format universel
+    if (color.substr(0, 1) === '#') {
+        return color.substr(1,7);
+    }
+    var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+    
+    var red = parseInt(digits[2]);
+    var green = parseInt(digits[3]);
+    var blue = parseInt(digits[4]);
+    
+    var rgb = blue | (green << 8) | (red << 16);
+    return digits[1] +''+ rgb.toString(16);
 }
 
 var inversHTML	=	function(htmlcode){
