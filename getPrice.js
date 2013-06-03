@@ -57,19 +57,19 @@ var inversHTML	=	function(htmlcode){
 		console.log('green = ' + green);
 		console.log('blue = ' + blue);							
 		
-		red 	=	red.toString(16);
+		red 	=	red.toString(10);
 		if(red =='0')
 		{
 			red = '00';
 		}
 		
-		green	=	green.toString(16);
+		green	=	green.toString(10);
 		if(green =='0')
 		{
 			green = '00';
 		}
 		
-		blue	=	blue.toString(16);
+		blue	=	blue.toString(10);
 		if(blue =='0')
 		{
 			blue = '00';
@@ -79,7 +79,7 @@ var inversHTML	=	function(htmlcode){
 		console.log('end après toString, htmlcode = ' + htmlcode);
 		
 		htmlcode = digits[1]+htmlcode+digits[5];
-		
+		console.log('au return, htmlcode = ' + htmlcode);	
 		return htmlcode;
 	}
 }
@@ -192,4 +192,4 @@ bindEvent(document,'click', function(event)
 	mouser.removeEventListener('mouseover',arguments.calle,false);
 	mouset.removeEventListener('mouseout',arguments.calle,false);
 	this.removeEventListener('click',arguments.callee,false);
-});		 
+});		
