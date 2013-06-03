@@ -30,6 +30,11 @@ var inversHTML	=	function(htmlcode){
 	{	
 		var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
 		
+		if(/, \d+/.test(digits[5]))
+		{
+			var alpha = parseInt(/\d+/.exec(digits[5]));
+			}
+		
 		var red = parseInt(digits[2]);
 		var green = parseInt(digits[3]);
 		var blue = parseInt(digits[4]);
@@ -38,39 +43,42 @@ var inversHTML	=	function(htmlcode){
 		console.log('red = ' + red);
 		console.log('green = ' + green);
 		console.log('blue = ' + blue);
+		console.log('alpha = ' + alpha);
 					
 		
-		red 	=	red	^	255;
+		red 		=	red		^	255;
 		green	=	green	^	255;
 		blue	=	blue	^	255;
+		
+		if(alpha)
+		{
+			alpha	=	alpha	^	255;
+			}
+		
 		console.log('XOR' );
 		
 		console.log('red = ' + red);
 		console.log('green = ' + green);
 		console.log('blue = ' + blue);							
+		console.log('alpha = ' + alpha);
 		
 		red 	=	red.toString(10);
-		if(red =='0')
-		{
-			red = '00';
-		}
-		
 		green	=	green.toString(10);
-		if(green =='0')
-		{
-			green = '00';
-		}
-		
 		blue	=	blue.toString(10);
-		if(blue =='0')
+		
+		if(alpha)
 		{
-			blue = '00';
-		}
+			alpha	=	alpha.toString(10);
+			}
 		
 		htmlcode = red+','+green+','+blue;
+		if(alpha)
+		{
+			htmlcode = htmlcode + ',' + alpha;
+		}
 		console.log('end après toString, htmlcode = ' + htmlcode);
 		
-		htmlcode = digits[1]+htmlcode+digits[5];
+		htmlcode = digits[1]+htmlcode+'\)';
 		console.log('au return, htmlcode = ' + htmlcode);	
 		return htmlcode;
 	}
