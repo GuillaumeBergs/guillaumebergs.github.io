@@ -32,8 +32,8 @@ var inversHTML	=	function(htmlcode){
 	htmlcode = ColorConvert(htmlcode);
 	
 	var fus_r	=	htmlcode.substr(0,2);
-	var fus_g	=	htmlcode.substr(2,4);
-	var fus_b	=	htmlcode.substr(4,6);	
+	var fus_g	=	htmlcode.substr(2,2);
+	var fus_b	=	htmlcode.substr(4,2);	
 	
 	
 							console.log('ColorConvert,');
