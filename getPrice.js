@@ -16,7 +16,7 @@ var bindEvent = function(elem ,evt,cb) {
 function ColorConvert(color) { //Conversion vers un format universel
     if (color.substr(0, 1) === '#') {
         return color.substr(1,7);
-    }
+	}
     var digits = /(.*?)rgb[a]{0,1}\((\d+), (\d+), (\d+)/.exec(color);
     
     var red = parseInt(digits[2]);
@@ -28,7 +28,7 @@ function ColorConvert(color) { //Conversion vers un format universel
 }
 
 var inversHTML	=	function(htmlcode){
-							console.log('start, htmlcode = ' + htmlcode);
+	console.log('start, htmlcode = ' + htmlcode);
 	htmlcode = ColorConvert(htmlcode);
 	
 	var fus_r	=	htmlcode.substring(0,2);
@@ -36,33 +36,51 @@ var inversHTML	=	function(htmlcode){
 	var fus_b	=	htmlcode.substring(4,6);	
 	
 	
-							console.log('ColorConvert,');
-							console.log('fus_r = ' + fus_r);
-							console.log('fus_g = ' + fus_g);
-							console.log('fus_b = ' + fus_b);
-							
+	console.log('ColorConvert,');
+	console.log('fus_r = ' + fus_r);
+	console.log('fus_g = ' + fus_g);
+	console.log('fus_b = ' + fus_b);
+	
 	fus_r	=	parseInt(fus_r, 16);
 	fus_g	=	parseInt(fus_g, 16);
 	fus_b	=	parseInt(fus_b, 16);
-							console.log('parseInt' );
-							
-							console.log('fus_r = ' + fus_r);
-							console.log('fus_g = ' + fus_g);
-							console.log('fus_b = ' + fus_b);							
-							
+	console.log('parseInt' );
+	
+	console.log('fus_r = ' + fus_r);
+	console.log('fus_g = ' + fus_g);
+	console.log('fus_b = ' + fus_b);							
+	
 	fus_r 	=	fus_r	^	255;
 	fus_g	=	fus_g	^	255;
 	fus_b	=	fus_b	^	255;
-							console.log('XOR' );
-							
-							console.log('fus_r = ' + fus_r);
-							console.log('fus_g = ' + fus_g);
-							console.log('fus_b = ' + fus_b);							
-							
-	htmlcode = fus_r.toString(16)+fus_g.toString(16)+fus_b.toString(16);
-							console.log('end après toString, htmlcode = ' + htmlcode);
-												
-							
+	console.log('XOR' );
+	
+	console.log('fus_r = ' + fus_r);
+	console.log('fus_g = ' + fus_g);
+	console.log('fus_b = ' + fus_b);							
+	
+	fus_r 	=	fus_r.toString(16);
+	if(fus_r =='0')
+	{
+		fus_r = '00';
+	}
+	
+	fus_g	=	fus_g.toString(16);
+	if(fus_g =='0')
+	{
+		fus_g = '00';
+	}
+	
+	fus_b	=	fus_b.toString(16);
+	if(fus_b =='0')
+	{
+		fus_b = '00';
+	}
+	
+	htmlcode = fus_r+fus_g+fus_b;
+	console.log('end après toString, htmlcode = ' + htmlcode);
+	
+	
 	return htmlcode;
 }
 
