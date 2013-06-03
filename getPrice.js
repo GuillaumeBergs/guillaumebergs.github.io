@@ -38,15 +38,7 @@ var inversHTML	=	function(htmlcode){
 		console.log('red = ' + red);
 		console.log('green = ' + green);
 		console.log('blue = ' + blue);
-		
-		red	=	parseInt(red, 16);
-		green	=	parseInt(green, 16);
-		blue	=	parseInt(blue, 16);
-		console.log('parseInt' );
-		
-		console.log('red = ' + red);
-		console.log('green = ' + green);
-		console.log('blue = ' + blue);							
+					
 		
 		red 	=	red	^	255;
 		green	=	green	^	255;
