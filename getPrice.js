@@ -19,16 +19,16 @@ var inversHTML	=	function(htmlcode){
 	console.log('start, htmlcode = ' + htmlcode);
 	
 	
-    if (color.substr(0, 1) === '#') 
+    if (htmlcode.substr(0, 1) === '#') 
 	{
-		color = color.substr(1,7);
-		color = parseInt(color,16);
-		color = color ^16777215;
-		return color;
+		htmlcode = htmlcode.substr(1,7);
+		htmlcode = parseInt(htmlcode,16);
+		htmlcode = htmlcode ^16777215;
+		return htmlcode;
 	}
 	else
 	{	
-		var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(color);
+		var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
 		
 		var red = parseInt(digits[2]);
 		var green = parseInt(digits[3]);
@@ -192,4 +192,4 @@ bindEvent(document,'click', function(event)
 	mouser.removeEventListener('mouseover',arguments.calle,false);
 	mouset.removeEventListener('mouseout',arguments.calle,false);
 	this.removeEventListener('click',arguments.callee,false);
-});		
+});		 
