@@ -13,11 +13,11 @@ var bindEvent = function(elem ,evt,cb) {
 }
 
 
-function RGB2HEX(color) { //Conversion vers un format universel
+function ColorConvert(color) { //Conversion vers un format universel
     if (color.substr(0, 1) === '#') {
         return color.substr(1,7);
     }
-    var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+    var digits = /(.*?)rgb[a]{0,1}\((\d+), (\d+), (\d+)/.exec(color);
     
     var red = parseInt(digits[2]);
     var green = parseInt(digits[3]);
@@ -29,14 +29,40 @@ function RGB2HEX(color) { //Conversion vers un format universel
 
 var inversHTML	=	function(htmlcode){
 							console.log('start, htmlcode = ' + htmlcode);
-	htmlcode = RGB2HEX(htmlcode);
-							console.log('rgb2hex, htmlcode = ' + htmlcode);
-	var fromus_hexatemp = parseInt(htmlcode, 16);
+	htmlcode = ColorConvert(htmlcode);
+	
+	var fus_r	=	htmlcode.substr(0,2);
+	var fus_g	=	htmlcode.substr(2,4);
+	var fus_b	=	htmlcode.substr(4,6);	
+	
+	
+							console.log('ColorConvert,');
+							console.log('fus_r = ' + fus_r);
+							console.log('fus_g = ' + fus_g);
+							console.log('fus_b = ' + fus_b);
+							
+	fus_r	=	parseInt(fus_r, 16);
+	fus_g	=	parseInt(fus_g, 16);
+	fus_b	=	parseInt(fus_b, 16);
 							console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
-	fromus_hexatemp = fromus_hexatemp ^ 16777215;
+							
+							console.log('fus_r = ' + fus_r);
+							console.log('fus_g = ' + fus_g);
+							console.log('fus_b = ' + fus_b);							
+							
+	fus_r 	=	fus_r	^	16777215;
+	fus_g	=	fus_g	^	16777215;
+	fus_b	=	fus_b	^	16777215;
 							console.log('XOR, fromus_hexatemp = ' + fromus_hexatemp);
-	htmlcode = fromus_hexatemp.toString(16);
+							
+							console.log('fus_r = ' + fus_r);
+							console.log('fus_g = ' + fus_g);
+							console.log('fus_b = ' + fus_b);							
+							
+	htmlcode = fus_r.toString(16)+fus_g.toString(16)+fus_b.toString(16);
 							console.log('end après toString, htmlcode = ' + htmlcode);
+												
+							
 	return htmlcode;
 }
 
