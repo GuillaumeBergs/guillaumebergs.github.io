@@ -50,9 +50,9 @@ var inversHTML	=	function(htmlcode){
 							console.log('fus_g = ' + fus_g);
 							console.log('fus_b = ' + fus_b);							
 							
-	fus_r 	=	fus_r	^	16777215;
-	fus_g	=	fus_g	^	16777215;
-	fus_b	=	fus_b	^	16777215;
+	fus_r 	=	fus_r	^	255;
+	fus_g	=	fus_g	^	255;
+	fus_b	=	fus_b	^	255;
 							console.log('XOR' );
 							
 							console.log('fus_r = ' + fus_r);
