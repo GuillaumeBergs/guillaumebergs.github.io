@@ -44,7 +44,7 @@ var inversHTML	=	function(htmlcode){
 	fus_r	=	parseInt(fus_r, 16);
 	fus_g	=	parseInt(fus_g, 16);
 	fus_b	=	parseInt(fus_b, 16);
-							console.log('parseInt, fromus_hexatemp = ' + fromus_hexatemp);
+							console.log('parseInt' );
 							
 							console.log('fus_r = ' + fus_r);
 							console.log('fus_g = ' + fus_g);
@@ -53,7 +53,7 @@ var inversHTML	=	function(htmlcode){
 	fus_r 	=	fus_r	^	16777215;
 	fus_g	=	fus_g	^	16777215;
 	fus_b	=	fus_b	^	16777215;
-							console.log('XOR, fromus_hexatemp = ' + fromus_hexatemp);
+							console.log('XOR' );
 							
 							console.log('fus_r = ' + fus_r);
 							console.log('fus_g = ' + fus_g);
