@@ -26,7 +26,7 @@ var inversHTML	=	function(htmlcode){
 	}
 	else
 	{	
-		var digits = /(rgb\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
+		var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
 		
 		if(/, \d+/.test(digits[5]))
 		{
@@ -82,33 +82,33 @@ var inversHTML	=	function(htmlcode){
 }
 
 
-	var mouser = bindEvent(document,'mouseover', function(event) 
-	{ var target = event.target || event.srcElement;
-		if(fus_actprice == 1)	// Si on cherceh le prix...
-		{
-			console.log('mouseover');
-			target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
-			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
-		}
-		else
-		{
-			this.removeEventListener('mouseover',arguments.callee,false);			
-		}
-	});
+var mouser = bindEvent(document,'mouseover', function(event) 
+{ var target = event.target || event.srcElement;
+	if(fus_actprice == 1)	// Si on cherceh le prix...
+	{
+		console.log('mouseover');
+		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
+		// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
+	}
+	else
+	{
+		this.removeEventListener('mouseover',arguments.callee,false);			
+	}
+});
 
-	var mouset = bindEvent(document,'mouseout', function(event) 
-	{ var target = event.target || event.srcElement;
-		if(fus_actprice == 1)	// Si on cherceh le prix...
-		{
-			console.log('mouseout');
-			target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
-			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
-		}
-		else
-		{
-			this.removeEventListener('mouseout',arguments.callee,false);			
-		}
-	});
+var mouset = bindEvent(document,'mouseout', function(event) 
+{ var target = event.target || event.srcElement;
+	if(fus_actprice == 1)	// Si on cherceh le prix...
+	{
+		console.log('mouseout');
+		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
+		// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
+	}
+	else
+	{
+		this.removeEventListener('mouseout',arguments.callee,false);			
+	}
+});
 
 
 
@@ -118,9 +118,8 @@ bindEvent(document,'click', function(event)
 	var 	fromus_txt    = target.innerHTML;
 	var 	fromus_selectedText  = target.textContent;
 	var 	fromus_selectedTexttmp;
-	
-	var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_ site
-	fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+	var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
+	var fromus_site = 'www'+ /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 	fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
 	fromus_site	=	'www'+fromus_site;
 	
