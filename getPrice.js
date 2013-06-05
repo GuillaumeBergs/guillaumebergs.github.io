@@ -26,7 +26,7 @@ var inversHTML	=	function(htmlcode){
 	}
 	else
 	{	
-		var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
+		var digits = /(rgb\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
 		
 		if(/, \d+/.test(digits[5]))
 		{
