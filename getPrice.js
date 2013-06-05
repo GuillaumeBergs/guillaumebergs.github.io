@@ -120,7 +120,7 @@ bindEvent(document,'click', function(event)
 	var 	fromus_selectedText  = target.textContent;
 	var 	fromus_selectedTexttmp;
 	var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
-	var fromus_site = 'www'+ /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
+	var fromus_site = /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 	fromus_site	=	'www'+fromus_site;
 	
 	fromus_txt        = fromus_txt.replace(/\n/g,'');
