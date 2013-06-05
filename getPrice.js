@@ -83,7 +83,7 @@ var inversHTML	=	function(htmlcode){
 
 if(fus_actprice == 0)
 {
-	bindEvent(document,'mouseover', function(event) 
+	var mouser = bindEvent(document,'mouseover', function(event) 
 	{ var target = event.target || event.srcElement;
 		if(fus_actprice == 1)	// Si on cherceh le prix...
 		{
@@ -99,7 +99,7 @@ if(fus_actprice == 0)
 }
 if(fus_actprice == 0)
 {
-	bindEvent(document,'mouseout', function(event) 
+	var mouset = bindEvent(document,'mouseout', function(event) 
 	{ var target = event.target || event.srcElement;
 		if(fus_actprice == 1)	// Si on cherceh le prix...
 		{
