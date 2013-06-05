@@ -1,5 +1,5 @@
 var fus_actprice = 1; // V ariable indiquant que l'on est à la recherche du prix
-
+var fus_color;	// variable contenant la couleur précédente
 var bindEvent = function(elem ,evt,cb) {
 	//vérifie si addEventListenerexiste dans l'élément
 	if ( elem.addEventListener ) {
@@ -87,6 +87,7 @@ var mouser = bindEvent(document,'mouseover', function(event)
 	if(fus_actprice == 1)	// Si on cherceh le prix...
 	{
 		console.log('mouseover');
+		fus_color = getComputedStyle(target).backgroundColor;
 		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
 		// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 	}
@@ -101,7 +102,7 @@ var mouset = bindEvent(document,'mouseout', function(event)
 	if(fus_actprice == 1)	// Si on cherceh le prix...
 	{
 		console.log('mouseout');
-		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
+		target.style.backgroundColor = fus_color;
 		// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 	}
 	else
@@ -202,6 +203,6 @@ bindEvent(document,'click', function(event)
 	console.log(fromus_selectedText);
 	localStorage["regPrice"] = fromus_selectedText;
 	fus_actprice = 0;	// On ne cherche plus le prix
-	target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
+	target.style.backgroundColor = fus_color;	
 	this.removeEventListener('click',arguments.callee,false);
 });		
