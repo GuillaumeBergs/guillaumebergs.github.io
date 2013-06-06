@@ -135,13 +135,13 @@ function fromus_recupPrice(idclass,fus_data)
 	console.log('On entre dans recupPrice');
 	if(idclass == 'id')
 	{
-	console.log('C\'est un id');
+		console.log('C\'est un id');
 		fromus_sitelist[fromus_site].price_id = fus_data.split(';');
 		fromus_sitelist[fromus_site].price_class.push('');		
 	}
 	else
 	{
-	console.log('C\'est une classe');
+		console.log('C\'est une classe');
 		fromus_sitelist[fromus_site].price_class = fus_data.split(';');
 		fromus_sitelist[fromus_site].price_id.push('');		
 	}
@@ -319,7 +319,7 @@ function fromus_recupImg(idclass,fus_data)
 	{
 		fromus_i = 0;
 	}			
-
+	
 	// stockage du visuel dans local storage
 	localStorage["regImg"] = fromus_img;
 	//Mise à zéro des indicateurs	
@@ -391,13 +391,20 @@ function fromus_recupDesc(idclass,fus_data)
 	{//En cas d'absence de description, utiliser le nom du produit.
 		fromus_desc =	fromus_objectname;
 	}
-
+	
+	
+	//Début de la section "limitation de la longueur des données".
+	if(fromus_desc.length > 200)
+	{
+		fromus_desc					=	fromus_desc.substring(0,195)+"[...]";
+	}
+	
 	// stockage de la description dans local storage
 	localStorage["regDesc"] = fromus_desc;
 	
 	//Mise à zéro des indicateurs
 	localStorage["fromus_moredesc"]	=	JSON.stringify(false);
-
+	
 }
 ///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 
@@ -406,14 +413,14 @@ localStorage["regStore"] = fromus_site;
 console.log('localStorage 1'+localStorage["regStore"]);
 if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
-
-
+	
+	
 	//fromus_recupName()
 	fromus_recupPrice('class','mpsTotalPriceMoney');
 	if(localStorage["regPrice"]=='?')
 	{fromus_recupPrice('id','spanMainTotalPrice;StorePromo_PriceText');}
-//	fromus_recupImg()
-//	fromus_recupDesc()
+	//	fromus_recupImg()
+	//	fromus_recupDesc()
 }
 else
 {	// Si le site n'est pas enregistré
@@ -423,11 +430,6 @@ else
 	fromus_pricemin=fromus_error;
 }
 
-//Début de la section "limitation de la longueur des données".
-if(fromus_desc.length > 200)
-{
-	fromus_desc					=	fromus_desc.substring(0,195)+"[...]";
-}
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
