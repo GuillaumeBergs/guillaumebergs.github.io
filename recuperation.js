@@ -52,7 +52,7 @@ function fromus_siteObj()
 
 function fromus_recupName(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].name_id = request.data.split(';');
 		fromus_sitelist[fromus_site].name_class.push('');		
