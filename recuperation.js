@@ -49,7 +49,7 @@ function fromus_siteObj()
 }
 
 /////////////////////////////////////// Début de la déclaration des fonctions de récupération ///////////////////////////////////////
-var fromus_sitelist[fromus_site] = new fromus_siteObj();
+fromus_sitelist[fromus_site] = new fromus_siteObj();
 function fromus_recupName(idclass,fus_data)
 {
 	if(idclass == 'id')
