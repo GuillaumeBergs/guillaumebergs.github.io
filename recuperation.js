@@ -132,7 +132,7 @@ function fromus_recupName(idclass)
 
 function fromus_recupPrice(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].price_id = request.data.split(';');
 		fromus_sitelist[fromus_site].price_class.push('');		
@@ -218,7 +218,7 @@ function fromus_recupPrice(idclass)
 
 function fromus_recupImg(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].img_id = request.data.split(';');
 		fromus_sitelist[fromus_site].img_class.push('');		
@@ -321,7 +321,7 @@ function fromus_recupImg(idclass)
 
 function fromus_recupDesc(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].desc_id = request.data.split(';');
 		fromus_sitelist[fromus_site].desc_class.push('');		
