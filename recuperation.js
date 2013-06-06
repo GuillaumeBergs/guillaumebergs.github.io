@@ -132,16 +132,23 @@ function fromus_recupName(idclass,fus_data)
 
 function fromus_recupPrice(idclass,fus_data)
 {
+	console.log('On entre dans recuPrice');
 	if(idclass == 'id')
 	{
+	console.log('C\'est un id');
 		fromus_sitelist[fromus_site].price_id = fus_data.split(';');
 		fromus_sitelist[fromus_site].price_class.push('');		
 	}
 	else
 	{
+	console.log('C\'est une classe');
 		fromus_sitelist[fromus_site].price_class = fus_data.split(';');
 		fromus_sitelist[fromus_site].price_id.push('');		
 	}
+	
+	console.log('price_class = ' + fromus_sitelist[fromus_site].price_class);
+	console.log('price_id = '+fromus_sitelist[fromus_site].price_id);
+	
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 	if(localStorage["fromus_moreprice"])
 	{
