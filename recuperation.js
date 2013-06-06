@@ -49,7 +49,7 @@ function fromus_siteObj()
 }
 
 /////////////////////////////////////// Début de la déclaration des fonctions de récupération ///////////////////////////////////////
-
+var fromus_sitelist[fromus_site] = new fromus_siteObj();
 function fromus_recupName(idclass,fus_data)
 {
 	if(idclass == 'id')
@@ -132,7 +132,7 @@ function fromus_recupName(idclass,fus_data)
 
 function fromus_recupPrice(idclass,fus_data)
 {
-	console.log('On entre dans recuPrice');
+	console.log('On entre dans recupPrice');
 	if(idclass == 'id')
 	{
 	console.log('C\'est un id');
