@@ -1,7 +1,10 @@
-function getPrice()
+javascript:
+
+function getName()
 {
-	var fus_actprice = 1; // V ariable indiquant que l'on est à la recherche du prix
-	var fus_colorprice;	// variable contenant la couleur précédente
+	var fus_actname = 1; // V ariable indiquant que l'on est à la recherche du nom
+	var fus_colorname;	// variable contenant la couleur précédente
+	var fus_bordername;	// variable contenant la bordure précédente	
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -16,8 +19,8 @@ function getPrice()
 		}
 	}
 	
-	var inversHTMLprice	=	function(htmlcode){
-		console.log('start, htmlcode = ' + htmlcode);
+	var inversHTMLname	=	function(htmlcode){
+		
 		
 		if (htmlcode.substr(0, 1) === '#') 
 		{
@@ -38,13 +41,7 @@ function getPrice()
 			var red = parseInt(digits[2]);
 			var green = parseInt(digits[3]);
 			var blue = parseInt(digits[4]);
-			
-			console.log('ColorConvert,');
-			console.log('red = ' + red);
-			console.log('green = ' + green);
-			console.log('blue = ' + blue);
-			console.log('alpha = ' + alpha);
-			
+
 			red 		=	red		^	255;
 			green	=	green	^	255;
 			blue	=	blue	^	255;
@@ -53,14 +50,7 @@ function getPrice()
 			{
 				alpha	=	alpha	^	255;
 			}
-			
-			console.log('XOR' );
-			
-			console.log('red = ' + red);
-			console.log('green = ' + green);
-			console.log('blue = ' + blue);							
-			console.log('alpha = ' + alpha);
-			
+
 			red 	=	red.toString(10);
 			green	=	green.toString(10);
 			blue	=	blue.toString(10);
@@ -75,21 +65,22 @@ function getPrice()
 			{
 				htmlcode = htmlcode + ',' + alpha;
 			}
-			console.log('end après toString, htmlcode = ' + htmlcode);
+			
 			
 			htmlcode = digits[1]+htmlcode+'\)';
-			console.log('au return, htmlcode = ' + htmlcode);	
+			
 			return htmlcode;
 		}
 	}
-	
+
 	var mouser = bindEvent(document,'mouseover', function(event) 
 	{ var target = event.target || event.srcElement;
-		if(fus_actprice == 1)	// Si on cherceh le prix...
-		{
-			console.log('mouseover');
-			fus_colorprice = getComputedStyle(target).backgroundColor;
-			target.style.backgroundColor = inversHTMLprice(getComputedStyle(target).backgroundColor);	
+		if(fus_actname == 1)	// Si on cherceh le prix...
+		{	
+			fus_colorname = getComputedStyle(target).backgroundColor;
+			fus bordername = getComputedStyle(target).border;
+			target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			target.style.border = '5px dotted black';
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -100,10 +91,11 @@ function getPrice()
 	
 	var mouset = bindEvent(document,'mouseout', function(event) 
 	{ var target = event.target || event.srcElement;
-		if(fus_actprice == 1)	// Si on cherceh le prix...
+		if(fus_actname == 1)	// Si on cherceh le prix...
 		{
-			console.log('mouseout');
-			target.style.backgroundColor = fus_colorprice;
+			
+			target.style.backgroundColor = fus_colorname;
+			target.style.border = bordername;
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -111,34 +103,30 @@ function getPrice()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
-	
-	
-	
+
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
 		var 	fromus_txt    = target.innerHTML;
 		var 	fromus_selectedText  = target.textContent;
 		var 	fromus_selectedTexttmp;
-		var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
-		var fromus_site = /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
+		var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
+		fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+		fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
 		fromus_site	=	'www'+fromus_site;
 		
 		fromus_txt        = fromus_txt.replace(/\n/g,'');
-		console.log(target.textContent);
 		
 		if(/id=\"/.test(fromus_txt))
 		{
 			var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-			console.log(fromus_idmatch);
+			
 		}
 		if(/class=\"/.test(fromus_txt))
 		{
 			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-			console.log(fromus_classmatch);
+			
 		}
-		
-		console.log("Ce qui est ajouté à la base de données est...");
 		
 		if(fromus_idmatch !=undefined)
 		{
@@ -146,78 +134,54 @@ function getPrice()
 			{
 				// id et class 
 				
-				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_priceid =fromus_selectedTexttmp;
-				
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				var fus_priceclass = fromus_selectedTexttmp;
+				var fus_nameclass =fromus_selectedTexttmp;
 				
+				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+				var fus_nameid = fromus_selectedTexttmp;
 			}
 			else
 			{
 				//id sans class
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_priceid =fromus_selectedTexttmp;
-				
+				var fus_nameid = fromus_selectedTexttmp;
 			}
-			
-			fromus_selectedText	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
-			fromus_selectedText	=	document.getElementById(fromus_selectedText).textContent;
-			if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
-			{
-				fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
-			}
-			
+			fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
 		}
 		else
 		{
 			if(fromus_classmatch !=undefined)
 			{ //Class sans id
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				var fus_priceclass = fromus_selectedTexttmp;
+				var fus_nameclass =fromus_selectedTexttmp;
 				
 				fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 				
 				fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
-				console.log(fromus_selectedText);
-				if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
-				{
-					fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
-				}
-				else
-				{
-					fromus_selectedText	=	'';
-				}
 			}
 			else
 			{
 				//ni class ni id
-				console.log('Rien.')
-				if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
-				{
-					fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
-				}
 			}  
 		}
-		
-		var fus_priceresult = '';
-		if(fus_priceid)
+		var fus_nameresult = '';
+		if(fus_nameid)
 		{
-			fus_priceresult += 'price_id<-->'+fus_priceid+'/';
+			fus_nameresult += '%name_id<-->'+fus_nameid+'/';
 		}
-		if(fus_priceclass)
+		if(fus_nameclass)
 		{
-			fus_priceresult += 'price_class<-->'+fus_priceclass+'/';
-		}
+			fus_nameresult += '%name_class<-->'+fus_nameclass+'/';
+		}	
 		
-		console.log("Et ce qui est affiché dans la case est...");
-		console.log(fromus_selectedText);
-		localStorage["regGetPrice"] = fus_priceresult;
-		localStorage["regPrice"] = fromus_selectedText;
-		fus_actprice = 0;	// On ne cherche plus le prix
-		target.style.backgroundColor = fus_colorprice;	
+		localStorage['regGetName'] = fus_nameresult;
+		localStorage['regName'] = fromus_selectedText;
+
+		fus_actname = 0;	// On ne cherche plus le nom
+		target.style.backgroundColor = fus_colorname;	
+			target.style.border = bordername;
 		this.removeEventListener('click',arguments.callee,false);
-	});		
+	});
 }
 
-getPrice();
+getName();
