@@ -78,7 +78,7 @@ function getName()
 		if(fus_actname == 1)	// Si on cherceh le prix...
 		{	
 			fus_colorname = getComputedStyle(target).backgroundColor;
-			fus bordername = getComputedStyle(target).border;
+			fus_bordername = getComputedStyle(target).border;
 			target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
 			target.style.border = '5px dotted black';
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -95,7 +95,7 @@ function getName()
 		{
 			
 			target.style.backgroundColor = fus_colorname;
-			target.style.border = bordername;
+			target.style.border = fus_bordername;
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -179,7 +179,7 @@ function getName()
 
 		fus_actname = 0;	// On ne cherche plus le nom
 		target.style.backgroundColor = fus_colorname;	
-			target.style.border = bordername;
+			target.style.border = fus_bordername;
 		this.removeEventListener('click',arguments.callee,false);
 	});
 }
